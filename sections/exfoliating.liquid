@@ -1,0 +1,47 @@
+<div id="page_templ" class="page-width">
+    <div class="grid">
+        <h2>Solutions</h2>
+            <div class="wrapper">
+                {% include 'numbers' %}
+                {% if section.settings.exfoliating_product_1 != blank and section.settings.exfoliating_product_2 != blank %}
+                    <div class="products">
+                        {% include 'product-eczema', product: all_products[section.settings.exfoliating_product_1], disc: section.settings.exfoliating_product_1_text %}
+                        {% include 'product-eczema', product: all_products[section.settings.exfoliating_product_2], disc: section.settings.exfoliating_product_2_text %}
+                    </div>
+                {% endif %}
+            </div>
+        {{ page.content }}
+    </div>
+</div>
+
+{% include 'c_s_js' %}
+
+{% schema %}
+    {
+        "name": "Content",
+        "settings": [
+            {
+                "type": "product",
+                "id": "exfoliating_product_1",
+                "label": "Product Left"
+            },
+            {
+                "type": "textarea",
+                "id": "exfoliating_product_1_text",
+                "default": "You can’t beat the Coffee Scrub for it’s phenomenal powers to improve your complexion. The ground coffee beans are great at getting rid of stubborn gunk that can collect in your pores, and the natural caffeine helps reduce redness and makes the skin appear firmer and taught. This scrub also contains Dead Sea mineral salt, another natural exfoliant that contains a whole host of vitamins and minerals to nourish and protect the new, healthy skin it helps reveal.",
+                "label": "Product Left Text"
+            },
+            {
+                "type": "product",
+                "id": "exfoliating_product_2",
+                "label": "Product Right"
+            },
+            {
+                "type": "textarea",
+                "id": "exfoliating_product_2_text",
+                "default": "The Soursop Scrub is another a great way to exfoliate, especially if you have sensitive skin. This scrub also contains Dead Sea mineral salt as well as brown sugar, which both help clean the skin and remove dead cells. And, both of these exfoliants dissolve in the hot water of the shower, meaning that you won’t be able to scrub too harshly and over-work the skin, which can lead to damage. Nothing but smooth sailing here.",
+                "label": "Product Right Text"
+            }
+        ]
+    }
+{% endschema %}

@@ -1,0 +1,47 @@
+<div id="page_templ" class="page-width">
+    <div class="grid">
+        <h2>Solutions</h2>
+        <div class="wrapper">
+            {% include 'numbers' %}
+            {% if section.settings.backheads_product_1 != blank and section.settings.backheads_product_2 != blank %}
+                <div class="products">
+                    {% include 'product-eczema', product: all_products[section.settings.backheads_product_1], disc: section.settings.backheads_product_1_text %}
+                    {% include 'product-eczema', product: all_products[section.settings.backheads_product_2], disc: section.settings.backheads_product_2_text %}
+                </div>
+            {% endif %}
+        </div>
+        {{ page.content }}
+    </div>
+</div>
+
+{% include 'c_s_js' %}
+
+{% schema %}
+    {
+        "name": "Content",
+        "settings": [
+            {
+                "type": "product",
+                "id": "backheads_product_1",
+                "label": "Product Left"
+            },
+            {
+                "type": "textarea",
+                "id": "backheads_product_1_text",
+                "default": "If blackheads are your arch nemesis, give our Chocolate Scrub a try. This product is packed with jojoba oil, which can help dissolve that sebum before it has a chance to cause problems in your pores. The chocolate scrub also contains honey, which has natural antibacterial properties to keep your skin clean and dirt-free.",
+                "label": "Product Left Text"
+            },
+            {
+                "type": "product",
+                "id": "backheads_product_2",
+                "label": "Product Right"
+            },
+            {
+                "type": "textarea",
+                "id": "backheads_product_2_text",
+                "default": "Or, try our Coffee Scrub. This scrub also contains jojoba and honey to help keep your skin clear and oil-free. It also contains ground coffee beans, which are a firmer exfoliant than some of our other scrubs. This can help dislodge stubborn dirt and debris from your pores, but remember — be gentle! Rubbing too hard can damage your skin. Instead, use very gentle circular motions to help get rid of any nastiness and reveal that fresh new you.",
+                "label": "Product Right Text"
+            }
+        ]
+    }
+{% endschema %}

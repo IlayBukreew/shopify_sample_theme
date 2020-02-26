@@ -1,0 +1,205 @@
+
+{% assign img_img = product.featured_image %}
+
+{% assign product_description = product.description | split: '"ing_wrap">' %}
+
+<div class="prodd">
+    <div class="product">
+        <div class="cont">
+            <div class="left">
+                <img class="bg lazyload"src="{{ 'Group_11.png' | asset_img_url: 'master' }}">
+                <img class="lazyload"
+                    src="{{ img_img | img_url: 'master' }}"
+                    alt="{{ featured_image.alt | escape }}">
+            </div>
+            <div class="right">
+                <div class="title_wrap">
+                    <div class="title_left">
+                        <h1 class="title">{{ product.title }}</h1>
+                        {% if product.metafields.yotpo.reviews_count and product.metafields.yotpo.reviews_count != "0" %}
+                            <div style="display:none;" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+                                <span itemprop="itemReviewed">{{ product.title }}</span> 
+                                has a rating of 
+                                <span itemprop="ratingValue">{{ product.metafields.yotpo.reviews_average }}</span> 
+                                stars.
+                                <div style="display:none"><span itemprop="ratingCount">{{ product.metafields.yotpo.reviews_count }}</span></div>
+                                {% comment %}based on <span itemprop="ratingCount">{{ product.metafields.yotpo.reviews_count }}</span> reviews.{% endcomment %}
+                            </div>
+                            <div style="width:188px;height: 18px;" class="yotpo bottomLine" 
+                                data-appkey="axqeDm0H90oHPEJk3VP1UM8p4cucD4NUxckzJBxL"
+                                data-domain="{{ shop.permanent_domain | escape }}"
+                                data-product-id="{{ product.id }}"
+                                data-product-models="{{ product.id }}"
+                                data-name="{{ product.title | escape }}"
+                                data-url="{{ page.url }}"
+                                data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
+                                data-description="{{ product.description | escape }}"
+                                data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
+                            </div> 
+                        {% endif %}
+                    </div>
+                    <div class="title_right">
+                        <img src="{{ 'badge2.png' | asset_img_url: 'master'}}">
+                    </div>
+                </div>
+                <div class="description_part">{{ product_description.first | strip_html | remove: '<div class=' }}</div>
+                <div class="actions">
+                    {% if product.available %}
+                        {% form "product", product %}
+								<input type="hidden" id="rrr" name="id" value="{{ product.first_available_variant.id }}" checked />
+								{% unless product.title == product.collections[0].products[2].title %}
+                            <div class="vars">
+										
+											<div class="prod_picker_off">
+                                        <label for="rrr">
+													 {% if product.collections[0].products[0].id == product.id %}
+													 	{{ product.collections[0].products[1].first_available_variant.title }}
+													{% else %}
+														{{ product.collections[0].products[0].first_available_variant.title }}
+													 {% endif %}
+													 </label>
+                                    </div>
+												<div class="prod_picker picked">
+                                        <label for="rrr">
+													 {% if product.collections[0].products[1].id == product.id %}
+													 	{{ product.collections[0].products[1].first_available_variant.title }}
+													{% else %}
+														{{ product.collections[0].products[0].first_available_variant.title }}
+													 {% endif %}
+													 </label>
+                                    </div>
+											
+                            </div>
+									 {% endunless %}
+                            <p class="price">{{ product.first_available_variant.price | money }}</p>
+                            <div class="cart__qty">
+                                <span>Qty</span>
+                                <div class="quantity">
+                                    <div onclick="
+                                        var val = this.nextElementSibling.value - 1;
+                                        if (val > 0) {
+                                            this.nextElementSibling.value = val
+                                        }
+                                    ">-</div>
+                                    <input type="text" name="quantity" value="1" min="1" pattern="[0-9]*" data-quantity-item="{{ forloop.index }}">
+                                    <div onclick="
+                                        var val = Number(this.previousElementSibling.value) + 1;
+                                        this.previousElementSibling.value = val">+</div>
+                                </div>
+                                <button class="add-to-cart" type="submit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.42893 0.139526C3.33286 0.139526 0 3.39488 0 7.39569C0 11.3965 3.33286 14.6519 7.42893 14.6519C11.525 14.6519 14.8579 11.3965 14.8579 7.39569C14.8579 3.39488 11.525 0.139526 7.42893 0.139526ZM7.42893 14.093C3.64821 14.093 0.572143 11.0885 0.572143 7.39569C0.572143 3.7029 3.64821 0.698364 7.42893 0.698364C11.2096 0.698364 14.2857 3.7029 14.2857 7.39569C14.2857 11.0885 11.2096 14.093 7.42893 14.093Z" fill="white"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9291 4.41979L6.5373 9.24491L3.89194 7.1777C3.76944 7.08072 3.58944 7.10131 3.49016 7.22131C3.39266 7.34131 3.4123 7.51677 3.5348 7.61375L6.39194 9.84561C6.44516 9.88642 6.50801 9.907 6.57051 9.907C6.65016 9.907 6.72837 9.87561 6.78551 9.81282L11.3559 4.79026C11.4619 4.67445 11.4505 4.49863 11.3319 4.39642C11.2148 4.29282 11.0337 4.30398 10.9291 4.41979Z" fill="white"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.42893 0.139526C3.33286 0.139526 0 3.39488 0 7.39569C0 11.3965 3.33286 14.6519 7.42893 14.6519C11.525 14.6519 14.8579 11.3965 14.8579 7.39569C14.8579 3.39488 11.525 0.139526 7.42893 0.139526ZM7.42893 14.093C3.64821 14.093 0.572143 11.0885 0.572143 7.39569C0.572143 3.7029 3.64821 0.698364 7.42893 0.698364C11.2096 0.698364 14.2857 3.7029 14.2857 7.39569C14.2857 11.0885 11.2096 14.093 7.42893 14.093Z" fill="white"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9291 4.41979L6.5373 9.24491L3.89194 7.1777C3.76944 7.08072 3.58944 7.10131 3.49016 7.22131C3.39266 7.34131 3.4123 7.51677 3.5348 7.61375L6.39194 9.84561C6.44516 9.88642 6.50801 9.907 6.57051 9.907C6.65016 9.907 6.72837 9.87561 6.78551 9.81282L11.3559 4.79026C11.4619 4.67445 11.4505 4.49863 11.3319 4.39642C11.2148 4.29282 11.0337 4.30398 10.9291 4.41979Z" fill="white"/>
+                                    </svg>
+                                    <p>Add to Cart</p>
+                                    <p class="added">Added</p>
+                                </button>
+                                </div>
+                        {% endform %}
+                    {% else %}
+                        <a href="#" class="button small disabled">Sold Out</a>
+                    {% endif %}
+                </div>
+                {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
+            </div>
+        </div>
+    </div>
+
+    <div class="disc">
+          {{ product_description[1] | prepend: '<div class="ing_wrap">'}}
+    </div>
+    <div class="sec8">
+        <div class="cont">
+            <h3>Benefits of Using <br> Simply Scrub</h3>
+            <div class="flex_grid">
+                <div class="flex_item">
+                    <div class="circle">
+                        <div class="wrap"><img class="lazyload" src="{{ 'icn1.png' | asset_img_url: 'master' }}" alt=""></div>
+                    </div>
+                    <h6>Gentle Exfoliation</h6>
+                </div>
+                <div class="flex_item">
+                    <div class="circle">
+                        <div class="wrap"><img class="lazyload" src="{{ 'icn2.png' | asset_img_url: 'master' }}" alt=""></div>
+                    </div>
+                    <h6>Improve Circulation</h6>
+                </div>
+                <div class="flex_item">
+                    <div class="circle">
+                        <div class="wrap"><img class="lazyload" src="{{ 'icn3.png' | asset_img_url: 'master' }}" alt=""></div>
+                    </div>
+                    <h6>Reduce Skin Aging</h6>
+                </div>
+                <div class="flex_item">
+                    <div class="circle">
+                        <div class="wrap"><img class="lazyload" src="{{ 'icn4.png' | asset_img_url: 'master' }}" alt=""></div>
+                    </div>
+                    <h6>Moisturize and Protect Skin</h6>
+                </div>
+                <div class="flex_item">
+                    <div class="circle">
+                        <div class="wrap"><img class="lazyload" src="{{ 'icn5.png' | asset_img_url: 'master' }}" alt=""></div>
+                    </div>
+                    <h6>Prevent Skin Breakouts</h6>
+                </div>
+            </div>
+            <img class="bg lazyload" src="{{ 'mm.png' | asset_img_url: 'master' }}" alt="">
+        </div>
+    </div>
+    <div class="sec7">
+        <div class="cont">
+            <h3>Recent Reviews</h3>
+            <div class="reviews">
+                <div class="review">
+                    <div class="content">
+                        <p class="text">
+                            The texture, color and scent of this scrub is so lovely! I love using this one as a way to
+                            relax. The Vitamin C and almond oil is great for skin imperfections. The texture is far
+                            less gritty that other scrubs, making it a gentle shower solution that I reach for over and
+                            over again.
+                        </p>
+                    </div>
+                    <img class="lazyload" src="{{ 'port1.png' | asset_img_url: 'master' }}" alt="">
+                    <p class="name">Loretta Larson</p>
+                </div>
+                <div class="review">
+                    <div class="content">
+                        <p class="text">
+                            The texture, color and scent of this scrub is so lovely! I love using this one as a way to
+                            relax. The Vitamin C and almond oil is great for skin imperfections. The texture is far
+                            less gritty that other scrubs, making it a gentle shower solution that I reach for over and
+                            over again.
+                        </p>
+                    </div>
+                    <img class="lazyload" src="{{ 'port2.png' | asset_img_url: 'master' }}" alt="">
+                    <p class="name">Marie Townsend</p>
+                </div>
+                <div class="review">
+                    <div class="content">
+                        <p class="text">
+                            The texture, color and scent of this scrub is so lovely! I love using this one as a way to
+                            relax. The Vitamin C and almond oil is great for skin imperfections. The texture is far
+                            less gritty that other scrubs, making it a gentle shower solution that I reach for over and
+                            over again.
+                        </p>
+                    </div>
+                    <img class="lazyload" src="{{ 'port3.png' | asset_img_url: 'master' }}" alt="">
+                    <p class="name">Mina Nunez</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="y-embedded-widget" class="yotpo embedded-widget"
+        data-appkey="axqeDm0H90oHPEJk3VP1UM8p4cucD4NUxckzJBxL"
+        data-product-id="yotpo_global_reviews"
+        data-layout="reviews"
+        data-width="100"
+        data-reviews="10"
+        data-header-text="Recent Reviews"
+        data-header-background-color="919191"
+        data-body-background-color="FFFFFF"
+        data-font-size="18"
+        data-font-color="FFFFFF">&nbsp;</div>
+</div>

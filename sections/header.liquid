@@ -1,0 +1,236 @@
+<div id="ajax_msg" class="ajax_msg">
+    <div class="wrap"></div>
+</div>
+<div id="mob_menu" class="mob_menu">
+    <svg id="mob_close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="36px" height="36px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+        <g id="Icons" style="opacity:0.75;">
+            <g id="close">
+                <polygon id="x" style="fill-rule:evenodd;clip-rule:evenodd;" points="18.717,6.697 17.303,5.283 12,10.586 6.697,5.283    5.283,6.697 10.586,12 5.283,17.303 6.697,18.717 12,13.414 17.303,18.717 18.717,17.303 13.414,12   "/>
+            </g>
+        </g>
+        <g id="Guides" style="display:none;"></g>
+    </svg>
+    <ul>
+        {% for link in linklists[section.settings.main_linklist].links %}
+            <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+<div class="msg">
+    <p>Free Shipping on orders over $40</p>
+</div>
+<header class='{% if template == "index" %}home{% endif %}'>
+    <div class="navbar">
+        <div class="logo">
+            <a href="/">
+                <picture>
+                    <source
+                        data-srcset="{{ 'logo.webp' | asset_url }}"
+                        type="image/webp">
+                    <source
+                        data-srcset="{{ 'logo.png' | asset_img_url: 'master' }}"
+                        type="image/png">
+                    <img class="lazyload" data-src="{{ 'logo.png' | asset_img_url: 'master' }}" alt="">
+                </picture>
+            </a>
+        </div>
+        <div class="nav">
+            
+            <ul>
+                {% for link in linklists[section.settings.main_linklist].links %}
+                    <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="wrap">
+            <div class="cart">
+                <span id="cart_count" class="cart_count {% if cart.item_count == 0 %}hide{% endif %}">{{ cart.item_count }}</span>
+                <a href="/cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
+                        <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="14">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.00195312 13.9983H15.0002V0.00842285H0.00195312V13.9983Z"
+                                fill="white" />
+                        </mask>
+                        <g mask="url(#mask0)">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.687246 6.89166C0.637822 6.89166 0.597598 6.85299 0.597598 6.80546V5.38096C0.597598 5.33344 0.637822 5.29476 0.687246 5.29476H6.39442V6.09921C6.39442 6.40023 6.6491 6.6451 6.96214 6.6451H8.03786C8.3509 6.6451 8.60558 6.40023 8.60558 6.09921V5.29476H14.3128C14.3622 5.29476 14.4024 5.33344 14.4024 5.38096V6.80546C14.4024 6.85299 14.3622 6.89166 14.3128 6.89166H0.687246ZM12.8476 12.6789C12.7853 13.1045 12.4012 13.4254 11.9543 13.4254H3.04576C2.59875 13.4254 2.21473 13.1045 2.15244 12.6789L1.38961 7.46625H13.6104L12.8476 12.6789ZM6.99202 6.07048H8.00798V0.583014H6.99202V6.07048ZM14.3128 4.72017H8.60558V0.554282C8.60558 0.253296 8.3509 0.00842285 8.03786 0.00842285H6.96214C6.6491 0.00842285 6.39442 0.253296 6.39442 0.554282V4.72017H0.687246C0.308291 4.72017 0 5.01656 0 5.38096V6.80547C0 7.16983 0.308291 7.46625 0.687246 7.46625H0.786123L1.56064 12.759C1.66421 13.4665 2.30265 14 3.04576 14H11.9542C12.6974 14 13.3358 13.4665 13.4393 12.759L14.2139 7.46625H14.3128C14.6917 7.46625 15 7.16983 15 6.80547V5.38096C15 5.01656 14.6917 4.72017 14.3128 4.72017Z"
+                                fill="#748541" />
+                        </g>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.22702 12.7359C3.39205 12.7359 3.52585 12.6072 3.52585 12.4486V8.42636C3.52585 8.26771 3.39205 8.13904 3.22702 8.13904C3.06199 8.13904 2.92822 8.26771 2.92822 8.42636V12.4486C2.92822 12.6072 3.06199 12.7359 3.22702 12.7359Z"
+                            fill="#748541" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.93649 12.7359C5.10152 12.7359 5.23529 12.6072 5.23529 12.4486V8.42636C5.23529 8.26771 5.10152 8.13904 4.93649 8.13904C4.77146 8.13904 4.6377 8.26771 4.6377 8.42636V12.4486C4.6377 12.6072 4.77146 12.7359 4.93649 12.7359Z"
+                            fill="#748541" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.64548 12.7359C6.81051 12.7359 6.94428 12.6072 6.94428 12.4486V8.42636C6.94428 8.26771 6.81051 8.13904 6.64548 8.13904C6.48045 8.13904 6.34668 8.26771 6.34668 8.42636V12.4486C6.34668 12.6072 6.48045 12.7359 6.64548 12.7359Z"
+                            fill="#748541" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.35446 12.7359C8.51946 12.7359 8.65326 12.6072 8.65326 12.4486V8.42636C8.65326 8.26771 8.51946 8.13904 8.35446 8.13904C8.18946 8.13904 8.05566 8.26771 8.05566 8.42636V12.4486C8.05566 12.6072 8.18943 12.7359 8.35446 12.7359Z"
+                            fill="#748541" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.0639 12.7359C10.2289 12.7359 10.3627 12.6072 10.3627 12.4486V8.42636C10.3627 8.26771 10.2289 8.13904 10.0639 8.13904C9.89894 8.13904 9.76514 8.26771 9.76514 8.42636V12.4486C9.76514 12.6072 9.89891 12.7359 10.0639 12.7359Z"
+                            fill="#748541" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7729 8.94363C11.9379 8.94363 12.0717 8.81498 12.0717 8.65633V8.42636C12.0717 8.26771 11.9379 8.13904 11.7729 8.13904C11.6079 8.13904 11.4741 8.26771 11.4741 8.42636V8.65633C11.4741 8.81498 11.6079 8.94363 11.7729 8.94363Z"
+                            fill="#748541" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7729 12.7359C11.9379 12.7359 12.0717 12.6072 12.0717 12.4486V9.74797C12.0717 9.58933 11.9379 9.46068 11.7729 9.46068C11.6079 9.46068 11.4741 9.58933 11.4741 9.74797V12.4486C11.4741 12.6072 11.6079 12.7359 11.7729 12.7359Z"
+                            fill="#748541" />
+                    </svg>
+                </a>
+            </div>
+            <div id="mob_trigger" class="mob_trigger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="13" viewBox="0 0 17 13" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H17V1H0V0Z" fill="#AEB890" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 6H17V7H0V6Z" fill="#AEB890" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12H17V13H0V12Z" fill="#AEB890" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    {% if template == "index" %} 
+    <div class="hero">
+        <div class="left">
+            <h2 class="title">Organic</h2>
+            <svg xmlns="http://www.w3.org/2000/svg" width="380" height="14" viewBox="0 0 380 14" fill="none">
+                <line x1="123.5" y1="13" x2="123.5" y2="9.00002" stroke="#178C4D" />
+                <path d="M1 4C21.1667 7.33333 74.1 13.4 122.5 11" stroke="#178C4D" stroke-width="4" />
+                <line x1="122.5" y1="13" x2="122.5" y2="8.99999" stroke="#178C4D" />
+                <path d="M184 7.49999C237 3.83332 350.1 -1.30001 378.5 7.49999" stroke="#178C4D" stroke-width="4" />
+                <line x1="124.5" y1="9.00002" x2="124.5" y2="12" stroke="#178C4D" />
+                <line x1="125.5" y1="9.00002" x2="125.5" y2="11" stroke="#178C4D" />
+            </svg>
+            <h2>Body Scrub Collection</h2>
+            <p>
+                We know what you’re thinking. Funky-smelling soaps with
+                weird plastic beads. Or tubes and tubs with mile-long
+                ingredient lists. Kinda gross that this is the norm, huh?
+            </p>
+            <p>
+                Come on, you deserve better. So we’re doing better by
+                you!
+            </p>
+            <a class="btn" href="/pages/organic-body-scrub-ingredients">Checkout the Ingredients List</a>
+        </div>
+        <div class="right">
+            <div class="slider">
+                <button role="button"  class="control prev hide">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" fill="#178C4D" />
+                    </svg>
+                </button>
+                <div id="slides" class="slides">
+                    <picture>
+                        <source
+                            data-srcset="{{ 'Product-Chocolate.webp' | asset_url }}"
+                            type="image/webp">
+                        <source
+                            data-srcset="{{ 'Product-Chocolate.png' | asset_img_url: 'master' }}"
+                            type="image/png">
+                        <img class="show lazyload" data-src="{{ 'Product-Chocolate.png' | asset_img_url: 'master' }}" alt="">
+                    </picture>
+                    <picture>
+                        <source
+                            data-srcset="{{ 'Product-coffee.webp' | asset_url }}"
+                            type="image/webp">
+                        <source
+                            data-srcset="{{ 'Product-coffee.png' | asset_img_url: 'master' }}"
+                            type="image/png">
+                        <img class="lazyload" data-src="{{ 'Product-coffee.png' | asset_img_url: 'master' }}" alt="">
+                    </picture>
+                    <picture>
+                        <source
+                            data-srcset="{{ 'Product-rose.webp' | asset_url }}"
+                            type="image/webp">
+                        <source
+                            data-srcset="{{ 'Product-rose.png' | asset_img_url: 'master' }}"
+                            type="image/png">
+                        <img class="lazyload" data-src="{{ 'Product-rose.png' | asset_img_url: 'master' }}" alt="">
+                    </picture>
+                    <picture>
+                        <source
+                            data-srcset="{{ 'Product-soursop.webp' | asset_url }}"
+                            type="image/webp">
+                        <source
+                            data-srcset="{{ 'Product-soursop.png' | asset_img_url: 'master' }}"
+                            type="image/png">
+                        <img class="lazyload" data-src="{{ 'Product-soursop.png' | asset_img_url: 'master' }}" alt="">
+                    </picture>
+                </div>
+                <button role="button"  class="control next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" fill="#178C4D" />
+                    </svg>
+                </button>
+            </div>
+            <a class="btn" href="/pages/organic-body-scrub-ingredients">Checkout the Ingredients List</a>
+        </div>
+    </div>
+    <script>
+        var d = document;
+        var cntrls = d.getElementsByClassName('control');
+        var scroller2 = d.getElementById('slides');
+        var itemCount2 = scroller2.children.length;
+
+        var pos2 = 0;
+
+        function setTransform2() {
+            for (var index = 0; index < itemCount2; index++) {
+                var element = scroller2.children[index].children[2];
+                element.classList.remove('show');
+            }
+            scroller2.children[pos2].children[2].classList.add('show');
+            scroller2.style.transform = 'translate3d(' + (-pos2 * scroller2.offsetWidth ) + 'px,0,0)';
+        }
+
+
+        cntrls[0].addEventListener('click', function() {
+            pos2 = Math.max(pos2 - 1, 0);
+            if (pos2 == 0) {
+                this.classList.add('hide');
+            } 
+            if (pos2 == 2) {
+                cntrls[1].classList.remove('hide');
+            }
+            setTransform2();
+        });
+
+        cntrls[1].addEventListener('click', function() {
+            pos2 = Math.min(pos2 + 1, itemCount2 - 1);
+            if (pos2 == 3) {
+                this.classList.add('hide');
+            }
+            if (pos2 == 1) {
+                cntrls[0].classList.remove('hide');
+            }
+            setTransform2();
+        });
+
+        window.addEventListener('resize', setTransform2);
+    </script>
+    {% endif %}
+</header>
+<script>
+    var mob_trigger = document.getElementById('mob_trigger');
+    var mob_menu = document.getElementById('mob_menu');
+    var mob_close = document.getElementById('mob_close');
+    mob_trigger.addEventListener('click', function() {
+        mob_menu.classList.add('show');
+    });
+    mob_close.addEventListener('click', function() {
+        mob_menu.classList.remove('show');
+    });
+</script>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Navigation"
+    },
+    {
+      "type": "link_list",
+      "id": "main_linklist",
+      "label": "Menu",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %}

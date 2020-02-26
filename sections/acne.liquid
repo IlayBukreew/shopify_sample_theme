@@ -1,0 +1,47 @@
+<div id="page_templ" class="page-width">
+    <div class="grid">
+        <h2>Solutions</h2>
+        <div class="wrapper">
+            {% include 'numbers' %}
+            {% if section.settings.acne_product_1 != blank and section.settings.acne_product_2 != blank %}
+                <div class="products">
+                    {% include 'product-eczema', product: all_products[section.settings.acne_product_1], disc: section.settings.acne_product_1_text %}
+                    {% include 'product-eczema', product: all_products[section.settings.acne_product_2], disc: section.settings.acne_product_2_text %}
+                </div>
+            {% endif %}
+        </div>
+        {{ page.content }}
+    </div>
+</div>
+
+{% include 'c_s_js' %}
+
+{% schema %}
+    {
+        "name": "Content",
+        "settings": [
+            {
+                "type": "product",
+                "id": "acne_product_1",
+                "label": "Product Left"
+            },
+            {
+                "type": "textarea",
+                "id": "acne_product_1_text",
+                "default": "Our Soursop Scrub is a great choice to help prevent breakouts because of its cooling and soothing properties. The vitamins in soursop leaves are excellent for healing sores, and refreshing mint leaves help reduce redness and itchiness. Mint also contains salicylic acid, which helps get rid of dead skin that can clog pores and cause break.",
+                "label": "Product Left Text"
+            },
+            {
+                "type": "product",
+                "id": "acne_product_2",
+                "label": "Product Right"
+            },
+            {
+                "type": "textarea",
+                "id": "acne_product_2_text",
+                "default": "Another (indulgent) way to help relieve acne is with our Chocolate Scrub. This product contains honey, which is naturally antibacterial. Combined with jojoba oil, which dissolves sebum, and tea tree oil, which also has anti-fungal properties, your skin will stay squeaky clean and won’t give dirt a chance to cause any problems.",
+                "label": "Product Right Text"
+            }
+        ]
+    }
+{% endschema %}

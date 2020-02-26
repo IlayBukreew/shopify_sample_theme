@@ -1,0 +1,62 @@
+<div class="page_ingridients">
+    <div class="grid">
+        <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
+            <div class="section-header text-center">
+                <h1>{{ page.title }}</h1>
+            </div>
+
+            <div class="rte">
+                {{ page.content }}
+            </div>
+        </div>
+    </div>
+    <div id="modal">
+      <div id="close_m">
+        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none">
+			<g opacity="0.5">
+				<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="11" height="11">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0V11H11V0H0L0 0Z" fill="white"/>
+				</mask>
+				<g mask="url(#mask0)">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M4.97411 5.5016L0.104582 10.4042C-0.0305635 10.5411 -0.0305635 10.7616 0.104582 10.8977C0.171832 10.9662 0.260783 11 0.349734 11C0.437826 11 0.526777 10.9662 0.594027 10.8977L5.49965 5.95788L10.4061 10.8977C10.4732 10.9662 10.5621 11 10.6502 11C10.7392 11 10.8275 10.9662 10.8954 10.8977C11.0305 10.7616 11.0305 10.5411 10.8954 10.4042L6.0267 5.5016L10.8988 0.594701C11.0337 0.458615 11.0337 0.238151 10.8988 0.102065C10.7637 -0.0340216 10.5445 -0.0340216 10.4094 0.102065L5.50051 5.04531L0.590589 0.102065C0.455444 -0.0340216 0.236504 -0.0340216 0.101359 0.102065C-0.0337863 0.238151 -0.0337863 0.458615 0.101359 0.594701L4.97411 5.5016Z" fill="#1D1D1B"/>
+				</g>
+			</g>
+		</svg>
+      </div>
+      <div class="content"></div>
+  </div>
+</div>
+<script>
+    var modal = document.getElementById('modal');
+    var close = document.getElementById('close_m');
+    var links = document.getElementsByTagName('a');
+
+    function checkHash() {
+        for (var i = 0; i < links.length; i++) {
+            if (links[i].getAttribute('name')) {
+             
+                 var hash = links[i].getAttribute('name');
+               links[i].parentNode.addEventListener('click', function() {
+                 history.pushState(null, null, '#' + this.children[0].getAttribute('name'));
+
+         		
+                 modal.children[1].innerHTML = this.innerHTML
+                    modal.classList.add('show');
+               
+              })
+
+                if (hash === window.location.hash.replace('#', '')) {
+                    modal.children[1].innerHTML = links[i].parentNode.innerHTML
+                    modal.classList.add('show');
+                }
+            }
+        }
+    }
+
+    window.addEventListener("DOMContentLoaded", checkHash);
+  
+  close.addEventListener('click', function() {
+    this.parentNode.classList.remove('show')
+  });
+
+</script>

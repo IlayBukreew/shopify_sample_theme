@@ -1,0 +1,234 @@
+<div class="post_wrap">
+<div class="section-header text-center">
+  <h1 class="article__title">{{ article.title }}</h1>
+</div>
+{% if article.image %}
+                  {% capture img_id %}ArticleImage-{{ article.image.id }}{% endcapture %}
+                  {% capture img_wrapper_id %}ArticleImageWrapper-{{ article.image.id }}{% endcapture %}
+                  {%- assign img_url = article.image | img_url: '1x1' -%}
+
+                  <div id="{{ img_wrapper_id }}" class="article__list-image-wrapper js">
+                    <a href="{{ article.url }}" style="padding-top:{{ 1 | divided_by: article.image.aspect_ratio | times: 100 }}%;" class="article__list-image-container">
+                      <img id="{{ img_id }}"
+                           class="article__list-image"
+                           src="{{ article.image | img_url: 'master' }}"
+                           alt="">
+                    </a>
+                  </div>
+
+                  <noscript>
+                    <p>
+                      <a href="{{ article.url }}">
+                        {{ article | img_url: '455x300', scale: 2 | img_tag: article.title }}
+                      </a>
+                    </p>
+                  </noscript>
+{% endif %}
+<div class="rte">
+  {{ article.content }}
+</div>
+  </div>
+<div class="sec6">
+        <div class="cont">
+            <div class="top">
+                <div class="controls">
+                    <div class="control" onclick="prev()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" fill="#178C4D" />
+                        </svg>
+                    </div>
+                    <div class="control" onclick="next()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" fill="#178C4D" />
+                        </svg>
+                    </div>
+                </div>
+                <h3>Blog Posts</h3>
+                <a href="/blogs/news" class="more">Read More</a>
+            </div>
+            <div class="wrap">
+                <div class="scroller">
+                    <ul class="items">
+                       {% for article in blogs["news"].articles %}
+                      {% if forloop.index0 == 0 or forloop.index0 == 3 or forloop.index0 == 6 %}
+                      		<li class="item">
+                              <div class="blog_posts">
+                      {% endif %}
+                      
+                            
+                                <div class="post">
+                                    <div class="img" {% if article.image %}style="background-image: url('{{ article.image | img_url: 'master' }}');"{% endif %}></div>
+                                    <div class="content">
+                                        <div class="title"><a href="{{ article.url }}">{{ article.title }}</a></div>
+                                        <p class="excerpt">
+                                            {% if article.excerpt.size > 0 %}
+                                              {{ article.excerpt }}
+                                            {% else %}
+                                              {{ article.content | strip_html | truncate: 150 }}
+                                            {% endif %}
+                                        </p>
+                                        <a href="{{ article.url }}" class="read">Read Article</a>
+                                    </div>
+                                </div>
+                            
+                       
+                      {% if forloop.index0 == 2 or forloop.index0 == 6 %}
+                                </div>
+                      		</li>
+                      {% endif %}
+                      {% endfor %}
+                        <li class="item">
+                            <div class="blog_posts">
+                                <div class="post">
+                                    <div class="img"></div>
+                                    <div class="content">
+                                        <div class="title">How Can Stress Affect Your Skin?</div>
+                                        <div class="excerpt">
+                                            In today’s busy world, living completely without stress may be impossible.
+                                            But
+                                            heightened
+                                            levels of stress, if left untreated, can wreak havoc on the body.
+                                        </div>
+                                        <a href="" class="read">Read Article</a>
+                                    </div>
+                                </div>
+                                <div class="post">
+                                    <div class="img"></div>
+                                    <div class="content">
+                                        <div class="title">Top 5 Uses for Body Scrubs</div>
+                                        <div class="excerpt">
+                                            In today’s busy world, living completely without stress may be impossible.
+                                            But heightened levels of stress, if left untreated, can wreak havoc on the
+                                            body.
+                                        </div>
+                                        <a href="" class="read">Read Article</a>
+                                    </div>
+                                </div>
+                                <div class="post">
+                                    <div class="img"></div>
+                                    <div class="content">
+                                        <div class="title">What is an Organic Body Scrub</div>
+                                        <div class="excerpt">
+                                            In today’s busy world, living completely without stress may be impossible.
+                                            But heightened levels of stress, if left untreated, can wreak havoc on the
+                                            body.
+                                        </div>
+                                        <a href="" class="read">Read Article</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="blog_posts">
+                                <div class="post">
+                                    <div class="img"></div>
+                                    <div class="content">
+                                        <div class="title">How Can Stress Affect Your Skin?</div>
+                                        <div class="excerpt">
+                                            In today’s busy world, living completely without stress may be impossible.
+                                            But
+                                            heightened
+                                            levels of stress, if left untreated, can wreak havoc on the body.
+                                        </div>
+                                        <a href="" class="read">Read Article</a>
+                                    </div>
+                                </div>
+                                <div class="post">
+                                    <div class="img"></div>
+                                    <div class="content">
+                                        <div class="title">Top 5 Uses for Body Scrubs</div>
+                                        <div class="excerpt">
+                                            In today’s busy world, living completely without stress may be impossible.
+                                            But heightened levels of stress, if left untreated, can wreak havoc on the
+                                            body.
+                                        </div>
+                                        <a href="" class="read">Read Article</a>
+                                    </div>
+                                </div>
+                                <div class="post">
+                                    <div class="img"></div>
+                                    <div class="content">
+                                        <div class="title">What is an Organic Body Scrub</div>
+                                        <div class="excerpt">
+                                            In today’s busy world, living completely without stress may be impossible.
+                                            But heightened levels of stress, if left untreated, can wreak havoc on the
+                                            body.
+                                        </div>
+                                        <a href="" class="read">Read Article</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="blog_posts">
+                                <div class="post">
+                                    <div class="img"></div>
+                                    <div class="content">
+                                        <div class="title">How Can Stress Affect Your Skin?</div>
+                                        <div class="excerpt">
+                                            In today’s busy world, living completely without stress may be impossible.
+                                            But
+                                            heightened
+                                            levels of stress, if left untreated, can wreak havoc on the body.
+                                        </div>
+                                        <a href="" class="read">Read Article</a>
+                                    </div>
+                                </div>
+                                <div class="post">
+                                    <div class="img"></div>
+                                    <div class="content">
+                                        <div class="title">Top 5 Uses for Body Scrubs</div>
+                                        <div class="excerpt">
+                                            In today’s busy world, living completely without stress may be impossible.
+                                            But heightened levels of stress, if left untreated, can wreak havoc on the
+                                            body.
+                                        </div>
+                                        <a href="" class="read">Read Article</a>
+                                    </div>
+                                </div>
+                                <div class="post">
+                                    <div class="img"></div>
+                                    <div class="content">
+                                        <div class="title">What is an Organic Body Scrub</div>
+                                        <div class="excerpt">
+                                            In today’s busy world, living completely without stress may be impossible.
+                                            But heightened levels of stress, if left untreated, can wreak havoc on the
+                                            body.
+                                        </div>
+                                        <a href="" class="read">Read Article</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+              <a href="/blogs/news" class="more">Read More</a>
+            </div>
+        </div>
+  <script>
+    var d = document;
+var wrap = d.querySelector('.wrap');
+var items = d.querySelector('.items');
+var itemCount = d.querySelectorAll('.blog_posts').length;
+var scroller = d.querySelector('.scroller');
+var pos = 0;
+
+function setTransform() {
+  items.style.transform = 'translate3d(' + (-pos * items.offsetWidth) + 'px,0,0)';
+}
+
+function prev() {
+  pos = Math.max(pos - 1, 0);
+  setTransform();
+}
+
+function next() {
+  pos = Math.min(pos + 1, itemCount - 2);
+  setTransform();
+}
+
+window.addEventListener('resize', setTransform);
+  </script>
+    </div>

@@ -1,0 +1,58 @@
+{% paginate blog.articles by 12 %}
+
+<div class="page-width">
+    <h1>Blog Posts</h1>
+</div>
+
+<ul class="blog_list hide" id="show_blog">
+    {% for article in blog.articles %}
+        <li class="blog_li">
+            <div class="article-listing">
+                {% if article.image %}
+                    <a href="{{ article.url }}">
+                        <div class="img_bg" style="background-image: url('{{ article.image | img_url: 'master' }}');"></div>
+                    </a>
+                {% else %}
+                    <a href="{{ article.url }}">
+                        <div class="img_bg"></div>
+                    </a>
+                {% endif %}
+                <div>
+                    <div class="txt_wrap">
+                        <h2><a href="{{ article.url }}">{{ article.title | truncate: 56 }}</a></h2>
+                        <div class="rte">
+                        {% if article.excerpt.size > 0 %}
+                            {{ article.excerpt }}
+                        {% else %}
+                            {{ article.content | strip_html | truncate: 150 }}
+                        {% endif %}
+                    </div>
+                    <div class="article__meta-buttons">
+                        <a href="{{ article.url }}" aria-label="{{ 'blogs.article.read_more_title' | t: title: article.title }}">
+                            Read Article
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </li>
+    {% endfor %}
+</ul>
+{% if blog.articles_count > 6 %}
+    <button id="load_more" class="load_more">More</button>
+{% endif %}
+<script>
+    var load_more = document.getElementById('load_more');
+    load_more.addEventListener('click', function(){
+        var blogsToShow = document.getElementById('show_blog');
+        blogsToShow.classList.remove('hide');
+        if (document.getElementById('pagination')) {
+            document.getElementById('pagination').classList.remove('hide');
+        }
+    })
+</script>
+
+{% if paginate.pages > 1 %}
+    {% include 'pagination' %}
+{% endif %}
+
+{% endpaginate %}

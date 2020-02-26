@@ -1,0 +1,1167 @@
+{% assign prod_1 = all_products[section.settings.product_1] %}
+{% assign prod_2 = all_products[section.settings.product_2] %}
+{% assign prod_3 = all_products[section.settings.product_3] %}
+{% assign prod_4 = all_products[section.settings.product_4] %}
+{{ 'swiper.min.js' | asset_url | script_tag }}
+{{ 'swiper.min.css' | asset_url | stylesheet_tag }}
+
+<div class="sec1">
+    <div class="cont">
+        <h2>Organic Body Scrub</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" width="588" height="24" viewBox="0 0 588 24" fill="none">
+            <path d="M3 7.08024C3 7.08024 91.2558 36.2347 267.396 11.9974C391.842 -5.12666 585 7.08024 585 7.08024"
+                stroke="#C0E54E" stroke-width="4" stroke-linecap="square" />
+        </svg>
+        <p>
+            You’re not the same person you were yesterday. That’s because your skin
+            is constantly regenerating, switching out those tired epidermis cells for
+            some shiny new ones. Out with the old, in with the new.
+        </p>
+        <div class="comp">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+            <div class="icn back">
+                <picture>
+                    <source
+                        data-srcset="{{ 'Bitmap_38.webp' | asset_url }}"
+                        type="image/webp">
+                    <source
+                        data-srcset="{{ 'Bitmap_38.png' | asset_img_url: 'master' }}"
+                        type="image/png">
+                    <img class="lazyload" data-expand="-100" data-src="{{ 'Bitmap_38.png' | asset_img_url: 'master' }}" alt="">
+                </picture>
+            </div>
+            <div class="icn jar">
+                <picture>
+                    <source
+                        data-srcset="{{ 'jar.webp' | asset_url }}"
+                        type="image/webp">
+                    <source
+                        data-srcset="{{ 'jar.png' | asset_img_url: 'master' }}"
+                        type="image/png">
+                    <img class="lazyload" data-expand="100" data-src="{{ 'jar.png' | asset_img_url: 'master' }}" alt="">
+                </picture>
+            </div>
+            <div class="icn icon">
+                <picture>
+                    <source
+                        data-srcset="{{ 'Bitmap_35.webp' | asset_url }}"
+                        type="image/webp">
+                    <source
+                        data-srcset="{{ 'Bitmap_35.png' | asset_img_url: 'master' }}"
+                        type="image/png">
+                    <img class="lazyload" data-src="{{ 'Bitmap_35.png' | asset_img_url: 'master' }}" alt="">
+                </picture>
+            </div>
+            <div class="icn rose">
+                <picture>
+                    <source
+                        data-srcset="{{ 'rose.webp' | asset_url }}"
+                        type="image/webp">
+                    <source
+                        data-srcset="{{ 'rose.png' | asset_img_url: 'master' }}"
+                        type="image/png">
+                    <img class="lazyload" data-src="{{ 'rose.png' | asset_img_url: 'master' }}" alt="">
+                </picture>
+            </div>
+            <div class="icn mint">
+                <picture>
+                    <source
+                        data-srcset="{{ 'mint.webp' | asset_url }}"
+                        type="image/webp">
+                    <source
+                        data-srcset="{{ 'mint.png' | asset_img_url: 'master' }}"
+                        type="image/png">
+                    <img class="lazyload" data-src="{{ 'mint.png' | asset_img_url: 'master' }}" alt="">
+                </picture>
+            </div>
+            <div class="icn choco">
+                <picture>
+                    <source
+                        data-srcset="{{ 'choco.webp' | asset_url }}"
+                        type="image/webp">
+                    <source
+                        data-srcset="{{ 'choco.png' | asset_img_url: 'master' }}"
+                        type="image/png">
+                    <img class="lazyload" data-src="{{ 'choco.png' | asset_img_url: 'master' }}" alt="">
+                </picture>
+            </div>
+            <div class="icn chem">
+                <picture>
+                    <source
+                        data-srcset="{{ 'chem.webp' | asset_url }}"
+                        type="image/webp">
+                    <source
+                        data-srcset="{{ 'chem.png' | asset_img_url: 'master' }}"
+                        type="image/png">
+                    <img class="lazyload" data-src="{{ 'chem.png' | asset_img_url: 'master' }}" alt="">
+                </picture>
+            </div>
+            <div class="heading natural">
+                <span>100%</span>
+                <p>Natural</p>
+            </div>
+            <div class="heading organic">
+                <span>100%</span>
+                <p>Organic</p>
+            </div>
+            <div class="heading chemical">
+                <span>100%</span>
+                <p>Chemical-Free</p>
+            </div>
+            <div class="midle"></div>
+        </div>
+    </div>
+    <div class="icn coco">
+        <picture>
+            <source
+                data-srcset="{{ 'coco.webp' | asset_url }}"
+                type="image/webp">
+            <source
+                data-srcset="{{ 'coco.png' | asset_img_url: 'master' }}"
+                type="image/png">
+            <img class="lazyload" data-src="{{ 'coco.png' | asset_img_url: 'master' }}" alt="">
+        </picture>
+    </div>
+    <div class="icn honey">
+        <picture>
+            <source
+                data-srcset="{{ 'honey.webp' | asset_url }}"
+                type="image/webp">
+            <source
+                data-srcset="{{ 'honey.png' | asset_img_url: 'master' }}"
+                type="image/png">
+            <img class="lazyload" data-src="{{ 'honey.png' | asset_img_url: 'master' }}" alt="">
+        </picture>
+    </div>
+</div>
+<div class="sec2">
+    <div class="cont">
+        <div class="product_slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="product">
+                            <picture>
+                                <source
+                                    data-srcset="{{ 'Bitmap_45.webp' | asset_url }}"
+                                    type="image/webp">
+                                <source
+                                    data-srcset="{{ 'Bitmap_45.png' | asset_img_url: 'master' }}"
+                                    type="image/png">
+                                <img class="bg one lazyload" data-src="{{ 'Bitmap_45.png' | asset_img_url: 'master' }}" alt="">
+                            </picture>
+                            <img class="thumb lazyload" data-src="{{ prod_1.featured_image | img_url: '210x' }}" alt="">
+                            <h3>{{ prod_1.title }}</h3>
+                            {% if product.metafields.yotpo.reviews_count and product.metafields.yotpo.reviews_count != "0" %}
+                            <div style="display:none;" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+                                <span itemprop="itemReviewed">{{ product.title }}</span>
+                                has a rating of <span itemprop="ratingValue">{{ product.metafields.yotpo.reviews_average }}</span>
+                                stars.
+                                <div style="display:none">
+                                    <span itemprop="ratingCount">{{ product.metafields.yotpo.reviews_count }}</span>
+                                </div>
+                            </div>
+                            <div style="width:188px;height: 18px;" class="yotpo bottomLine" data-appkey="axqeDm0H90oHPEJk3VP1UM8p4cucD4NUxckzJBxL"
+                                data-domain="{{ shop.permanent_domain | escape }}" data-product-id="{{ product.id }}"
+                                data-product-models="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ page.url }}"
+                                data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
+                                data-description="{{ product.description | escape }}" data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
+                            </div>
+                            {% endif %}
+                            <div class="size">{{ prod_1.first_available_variant.title }}</div>
+                            <div class="price">{{ prod_1.first_available_variant.price | money }}</div>
+                            {% form "product", prod_1, id: "add-to-cart" %}
+                            <input type="hidden" id="rrr" name="id" value="{{ prod_1.first_available_variant.id }}" checked />
+                            <button class="add_to_cart" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.42893 0.139526C3.33286 0.139526 0 3.39488 0 7.39569C0 11.3965 3.33286 14.6519 7.42893 14.6519C11.525 14.6519 14.8579 11.3965 14.8579 7.39569C14.8579 3.39488 11.525 0.139526 7.42893 0.139526ZM7.42893 14.093C3.64821 14.093 0.572143 11.0885 0.572143 7.39569C0.572143 3.7029 3.64821 0.698364 7.42893 0.698364C11.2096 0.698364 14.2857 3.7029 14.2857 7.39569C14.2857 11.0885 11.2096 14.093 7.42893 14.093Z" fill="white"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9291 4.41979L6.5373 9.24491L3.89194 7.1777C3.76944 7.08072 3.58944 7.10131 3.49016 7.22131C3.39266 7.34131 3.4123 7.51677 3.5348 7.61375L6.39194 9.84561C6.44516 9.88642 6.50801 9.907 6.57051 9.907C6.65016 9.907 6.72837 9.87561 6.78551 9.81282L11.3559 4.79026C11.4619 4.67445 11.4505 4.49863 11.3319 4.39642C11.2148 4.29282 11.0337 4.30398 10.9291 4.41979Z" fill="white"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.42893 0.139526C3.33286 0.139526 0 3.39488 0 7.39569C0 11.3965 3.33286 14.6519 7.42893 14.6519C11.525 14.6519 14.8579 11.3965 14.8579 7.39569C14.8579 3.39488 11.525 0.139526 7.42893 0.139526ZM7.42893 14.093C3.64821 14.093 0.572143 11.0885 0.572143 7.39569C0.572143 3.7029 3.64821 0.698364 7.42893 0.698364C11.2096 0.698364 14.2857 3.7029 14.2857 7.39569C14.2857 11.0885 11.2096 14.093 7.42893 14.093Z" fill="white"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9291 4.41979L6.5373 9.24491L3.89194 7.1777C3.76944 7.08072 3.58944 7.10131 3.49016 7.22131C3.39266 7.34131 3.4123 7.51677 3.5348 7.61375L6.39194 9.84561C6.44516 9.88642 6.50801 9.907 6.57051 9.907C6.65016 9.907 6.72837 9.87561 6.78551 9.81282L11.3559 4.79026C11.4619 4.67445 11.4505 4.49863 11.3319 4.39642C11.2148 4.29282 11.0337 4.30398 10.9291 4.41979Z" fill="white"/>
+                                </svg>
+                                <p>Add to Cart</p>
+                                <p class="added">Added</p>
+                            </button>
+                            {% endform %}
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product">
+                            <picture>
+                                <source
+                                    data-srcset="{{ 'Bitmap_43.webp' | asset_url }}"
+                                    type="image/webp">
+                                <source
+                                    data-srcset="{{ 'Bitmap_43.png' | asset_img_url: 'master' }}"
+                                    type="image/png">
+                                <img class="bg two lazyload" data-src="{{ 'Bitmap_43.png' | asset_img_url: 'master' }}" alt="">
+                            </picture>
+                            <img class="thumb lazyload" data-src="{{ prod_4.featured_image | img_url: '210x' }}" alt="">
+                            <h3>{{ prod_4.title }}</h3>
+                            {% if product.metafields.yotpo.reviews_count and product.metafields.yotpo.reviews_count != "0" %}
+                            <div style="display:none;" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+                                <span itemprop="itemReviewed">{{ product.title }}</span>
+                                has a rating of <span itemprop="ratingValue">{{ product.metafields.yotpo.reviews_average }}</span>
+                                stars.
+                                <div style="display:none">
+                                    <span itemprop="ratingCount">{{ product.metafields.yotpo.reviews_count }}</span>
+                                </div>
+                            </div>
+                            <div style="width:188px;height: 18px;" class="yotpo bottomLine" data-appkey="axqeDm0H90oHPEJk3VP1UM8p4cucD4NUxckzJBxL"
+                                data-domain="{{ shop.permanent_domain | escape }}" data-product-id="{{ product.id }}"
+                                data-product-models="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ page.url }}"
+                                data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
+                                data-description="{{ product.description | escape }}" data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
+                            </div>
+                            {% endif %}
+                            <div class="size">{{ prod_4.first_available_variant.title }}</div>
+                            <div class="price">{{ prod_4.first_available_variant.price | money }}</div>
+                            {% form "product", prod_4, id: "add-to-cart-4" %}
+                            <input type="hidden" id="rrr" name="id" value="{{ prod_4.first_available_variant.id }}" checked />
+                            <button class="add_to_cart" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.42893 0.139526C3.33286 0.139526 0 3.39488 0 7.39569C0 11.3965 3.33286 14.6519 7.42893 14.6519C11.525 14.6519 14.8579 11.3965 14.8579 7.39569C14.8579 3.39488 11.525 0.139526 7.42893 0.139526ZM7.42893 14.093C3.64821 14.093 0.572143 11.0885 0.572143 7.39569C0.572143 3.7029 3.64821 0.698364 7.42893 0.698364C11.2096 0.698364 14.2857 3.7029 14.2857 7.39569C14.2857 11.0885 11.2096 14.093 7.42893 14.093Z" fill="white"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9291 4.41979L6.5373 9.24491L3.89194 7.1777C3.76944 7.08072 3.58944 7.10131 3.49016 7.22131C3.39266 7.34131 3.4123 7.51677 3.5348 7.61375L6.39194 9.84561C6.44516 9.88642 6.50801 9.907 6.57051 9.907C6.65016 9.907 6.72837 9.87561 6.78551 9.81282L11.3559 4.79026C11.4619 4.67445 11.4505 4.49863 11.3319 4.39642C11.2148 4.29282 11.0337 4.30398 10.9291 4.41979Z" fill="white"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.42893 0.139526C3.33286 0.139526 0 3.39488 0 7.39569C0 11.3965 3.33286 14.6519 7.42893 14.6519C11.525 14.6519 14.8579 11.3965 14.8579 7.39569C14.8579 3.39488 11.525 0.139526 7.42893 0.139526ZM7.42893 14.093C3.64821 14.093 0.572143 11.0885 0.572143 7.39569C0.572143 3.7029 3.64821 0.698364 7.42893 0.698364C11.2096 0.698364 14.2857 3.7029 14.2857 7.39569C14.2857 11.0885 11.2096 14.093 7.42893 14.093Z" fill="white"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9291 4.41979L6.5373 9.24491L3.89194 7.1777C3.76944 7.08072 3.58944 7.10131 3.49016 7.22131C3.39266 7.34131 3.4123 7.51677 3.5348 7.61375L6.39194 9.84561C6.44516 9.88642 6.50801 9.907 6.57051 9.907C6.65016 9.907 6.72837 9.87561 6.78551 9.81282L11.3559 4.79026C11.4619 4.67445 11.4505 4.49863 11.3319 4.39642C11.2148 4.29282 11.0337 4.30398 10.9291 4.41979Z" fill="white"/>
+                                </svg>
+                                <p>Add to Cart</p>
+                                <p class="added">Added</p>
+                            </button>
+                            {% endform %}
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product">
+                            <picture>
+                                <source
+                                    data-srcset="{{ 'Bitmap_444.webp' | asset_url }}"
+                                    type="image/webp">
+                                <source
+                                    data-srcset="{{ 'Bitmap_444.png' | asset_img_url: 'master' }}"
+                                    type="image/png">
+                                <img class="bg three lazyload" data-src="{{ 'Bitmap_444.png' | asset_img_url: 'master' }}" alt="">
+                            </picture>
+                            <img class="thumb lazyload" data-src="{{ prod_3.featured_image | img_url: '210x' }}" alt="">
+                            <h3>{{ prod_3.title }}</h3>
+                            {% if product.metafields.yotpo.reviews_count and product.metafields.yotpo.reviews_count != "0" %}
+                            <div style="display:none;" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+                                <span itemprop="itemReviewed">{{ product.title }}</span>
+                                has a rating of <span itemprop="ratingValue">{{ product.metafields.yotpo.reviews_average }}</span>
+                                stars.
+                                <div style="display:none">
+                                    <span itemprop="ratingCount">{{ product.metafields.yotpo.reviews_count }}</span>
+                                </div>
+                            </div>
+                            <div style="width:188px;height: 18px;" class="yotpo bottomLine" data-appkey="axqeDm0H90oHPEJk3VP1UM8p4cucD4NUxckzJBxL"
+                                data-domain="{{ shop.permanent_domain | escape }}" data-product-id="{{ product.id }}"
+                                data-product-models="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ page.url }}"
+                                data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
+                                data-description="{{ product.description | escape }}" data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
+                            </div>
+                            {% endif %}
+                            <div class="size">{{ prod_3.first_available_variant.title }}</div>
+                            <div class="price">{{ prod_3.first_available_variant.price | money }}</div>
+                            {% form "product", prod_3, id: "add-to-cart-3" %}
+                            <input type="hidden" id="rrr" name="id" value="{{ prod_3.first_available_variant.id }}" checked />
+                            <button class="add_to_cart" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.42893 0.139526C3.33286 0.139526 0 3.39488 0 7.39569C0 11.3965 3.33286 14.6519 7.42893 14.6519C11.525 14.6519 14.8579 11.3965 14.8579 7.39569C14.8579 3.39488 11.525 0.139526 7.42893 0.139526ZM7.42893 14.093C3.64821 14.093 0.572143 11.0885 0.572143 7.39569C0.572143 3.7029 3.64821 0.698364 7.42893 0.698364C11.2096 0.698364 14.2857 3.7029 14.2857 7.39569C14.2857 11.0885 11.2096 14.093 7.42893 14.093Z" fill="white"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9291 4.41979L6.5373 9.24491L3.89194 7.1777C3.76944 7.08072 3.58944 7.10131 3.49016 7.22131C3.39266 7.34131 3.4123 7.51677 3.5348 7.61375L6.39194 9.84561C6.44516 9.88642 6.50801 9.907 6.57051 9.907C6.65016 9.907 6.72837 9.87561 6.78551 9.81282L11.3559 4.79026C11.4619 4.67445 11.4505 4.49863 11.3319 4.39642C11.2148 4.29282 11.0337 4.30398 10.9291 4.41979Z" fill="white"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.42893 0.139526C3.33286 0.139526 0 3.39488 0 7.39569C0 11.3965 3.33286 14.6519 7.42893 14.6519C11.525 14.6519 14.8579 11.3965 14.8579 7.39569C14.8579 3.39488 11.525 0.139526 7.42893 0.139526ZM7.42893 14.093C3.64821 14.093 0.572143 11.0885 0.572143 7.39569C0.572143 3.7029 3.64821 0.698364 7.42893 0.698364C11.2096 0.698364 14.2857 3.7029 14.2857 7.39569C14.2857 11.0885 11.2096 14.093 7.42893 14.093Z" fill="white"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9291 4.41979L6.5373 9.24491L3.89194 7.1777C3.76944 7.08072 3.58944 7.10131 3.49016 7.22131C3.39266 7.34131 3.4123 7.51677 3.5348 7.61375L6.39194 9.84561C6.44516 9.88642 6.50801 9.907 6.57051 9.907C6.65016 9.907 6.72837 9.87561 6.78551 9.81282L11.3559 4.79026C11.4619 4.67445 11.4505 4.49863 11.3319 4.39642C11.2148 4.29282 11.0337 4.30398 10.9291 4.41979Z" fill="white"/>
+                                </svg>
+                                <p>Add to Cart</p>
+                                <p class="added">Added</p>
+                            </button>
+                            {% endform %}
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product act">
+                            <picture>
+                                <source
+                                    data-srcset="{{ 'Bitmap_555.webp' | asset_url }}"
+                                    type="image/webp">
+                                <source
+                                    data-srcset="{{ 'Bitmap_555.png' | asset_img_url: 'master' }}"
+                                    type="image/png">
+                                <img class="bg four lazyload" data-src="{{ 'Bitmap_555.png' | asset_img_url: 'master' }}" alt="">
+                            </picture>
+                            <img class="thumb lazyload" data-src="{{ prod_2.featured_image | img_url: '210x' }}" alt="">
+                            <h3>{{ prod_2.title }}</h3>
+                            {% if product.metafields.yotpo.reviews_count and product.metafields.yotpo.reviews_count != "0" %}
+                            <div style="display:none;" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+                                <span itemprop="itemReviewed">{{ product.title }}</span>
+                                has a rating of <span itemprop="ratingValue">{{ product.metafields.yotpo.reviews_average }}</span>
+                                stars.
+                                <div style="display:none">
+                                    <span itemprop="ratingCount">{{ product.metafields.yotpo.reviews_count }}</span>
+                                </div>
+                            </div>
+                            <div style="width:188px;height: 18px;" class="yotpo bottomLine" data-appkey="axqeDm0H90oHPEJk3VP1UM8p4cucD4NUxckzJBxL"
+                                data-domain="{{ shop.permanent_domain | escape }}" data-product-id="{{ product.id }}"
+                                data-product-models="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ page.url }}"
+                                data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
+                                data-description="{{ product.description | escape }}" data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
+                            </div>
+                            {% endif %}
+                            <div class="size">{{ prod_2.first_available_variant.title }}</div>
+                            <div class="price">{{ prod_2.first_available_variant.price | money }}</div>
+                            {% form "product", prod_2, id: "add-to-cart-2"  %}
+                            <input type="hidden" id="rrr" name="id" value="{{ prod_2.first_available_variant.id }}" checked />
+                            <button class="add_to_cart" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.42893 0.139526C3.33286 0.139526 0 3.39488 0 7.39569C0 11.3965 3.33286 14.6519 7.42893 14.6519C11.525 14.6519 14.8579 11.3965 14.8579 7.39569C14.8579 3.39488 11.525 0.139526 7.42893 0.139526ZM7.42893 14.093C3.64821 14.093 0.572143 11.0885 0.572143 7.39569C0.572143 3.7029 3.64821 0.698364 7.42893 0.698364C11.2096 0.698364 14.2857 3.7029 14.2857 7.39569C14.2857 11.0885 11.2096 14.093 7.42893 14.093Z" fill="white"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9291 4.41979L6.5373 9.24491L3.89194 7.1777C3.76944 7.08072 3.58944 7.10131 3.49016 7.22131C3.39266 7.34131 3.4123 7.51677 3.5348 7.61375L6.39194 9.84561C6.44516 9.88642 6.50801 9.907 6.57051 9.907C6.65016 9.907 6.72837 9.87561 6.78551 9.81282L11.3559 4.79026C11.4619 4.67445 11.4505 4.49863 11.3319 4.39642C11.2148 4.29282 11.0337 4.30398 10.9291 4.41979Z" fill="white"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.42893 0.139526C3.33286 0.139526 0 3.39488 0 7.39569C0 11.3965 3.33286 14.6519 7.42893 14.6519C11.525 14.6519 14.8579 11.3965 14.8579 7.39569C14.8579 3.39488 11.525 0.139526 7.42893 0.139526ZM7.42893 14.093C3.64821 14.093 0.572143 11.0885 0.572143 7.39569C0.572143 3.7029 3.64821 0.698364 7.42893 0.698364C11.2096 0.698364 14.2857 3.7029 14.2857 7.39569C14.2857 11.0885 11.2096 14.093 7.42893 14.093Z" fill="white"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9291 4.41979L6.5373 9.24491L3.89194 7.1777C3.76944 7.08072 3.58944 7.10131 3.49016 7.22131C3.39266 7.34131 3.4123 7.51677 3.5348 7.61375L6.39194 9.84561C6.44516 9.88642 6.50801 9.907 6.57051 9.907C6.65016 9.907 6.72837 9.87561 6.78551 9.81282L11.3559 4.79026C11.4619 4.67445 11.4505 4.49863 11.3319 4.39642C11.2148 4.29282 11.0337 4.30398 10.9291 4.41979Z" fill="white"/>
+                                </svg>
+                                <p>Add to Cart</p>
+                                <p class="added">Added</p>
+                            </button>
+                            {% endform %}
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next">
+                    <button aria-hidden="true" aria-label="previous" role="presentation" class="control next">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" fill="#178C4D" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="swiper-button-prev">
+                    <button aria-hidden="true" aria-label="next" role="presentation" class="control prev">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" fill="#178C4D" />
+                        </svg>
+                    </button>
+                </div>
+        </div>
+            
+    </div>
+    <script>
+      var swiper = new Swiper('.product_slider', {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            slidesPerGroup: 1,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                1340: {
+                    slidesPerView: 2
+                }
+            }
+        });
+    </script>
+</div>
+<div class="sec3">
+    <div class="cont">
+        <h3>Amazing Soft Skin</h3>
+        <p>
+            You’re not the same person you were yesterday. That’s because your skin is constantly <br>
+            regenerating, switching out those tired epidermis cells for some shiny new ones.
+        </p>
+        <a href="" class="more">I want see more</a>
+    </div>
+    <picture>
+        <source
+            data-srcset="{{ 'sec3_face.webp' | asset_url }}"
+            type="image/webp">
+        <source
+            data-srcset="{{ 'sec3_face.png' | asset_img_url: 'master' }}"
+            type="image/png">
+        <img class="face lazyload" data-src="{{ 'sec3_face.png' | asset_img_url: 'master' }}" alt="">
+    </picture>
+    <picture>
+        <source
+            data-srcset="{{ 'salt-float-left.webp' | asset_url }}"
+            type="image/webp">
+        <source
+            data-srcset="{{ 'salt-float-left.png' | asset_img_url: 'master' }}"
+            type="image/png">
+        <img class="salt lazyload" data-src="{{ 'salt-float-left.png' | asset_img_url: 'master' }}" alt="">
+    </picture>
+    <picture>
+        <source
+            data-srcset="{{ 'white_stroke.webp' | asset_url }}"
+            type="image/webp">
+        <source
+            data-srcset="{{ 'white_stroke.png' | asset_img_url: 'master' }}"
+            type="image/png">
+        <img class="stroke lazyload" data-src="{{ 'white_stroke.png' | asset_img_url: 'master' }}" alt="">
+    </picture>
+</div>
+<div class="sec4">
+    <div class="cont">
+        <div class="left">
+            <picture>
+                <source
+                    data-srcset="{{ 'photo.webp' | asset_url }}"
+                    type="image/webp">
+                <source
+                    data-srcset="{{ 'photo.png' | asset_img_url: 'master' }}"
+                    type="image/png">
+                <img class="photo lazyload" data-src="{{ 'photo.png' | asset_img_url: 'master' }}" alt="">
+            </picture>
+        </div>
+        <div class="right">
+            <h2>Signs That You Need <br> to Use a Scrub</h2>
+            <p>That's because your skin is constantly regenerating, switching out those tired epidermis cells for
+                some shiny new ones.</p>
+            <div class="flex_grid">
+                <a class="flex_item" href="/pages/eczema-scrub">
+                    <picture>
+                        <source
+                            data-srcset="{{ 'Group37.webp' | asset_url }}"
+                            type="image/webp">
+                        <source
+                            data-srcset="{{ 'Group37.png' | asset_img_url: 'master' }}"
+                            type="image/png">
+                        <img class="lazyload" data-src="{{ 'Group37.png' | asset_img_url: 'master' }}" alt="">
+                    </picture>
+                    <h5>Eczema</h5>
+                </a>
+                <a class="flex_item" href="/pages/scrub-for-dark-spots">
+                    <picture>
+                        <source
+                            data-srcset="{{ 'Group34.webp' | asset_url }}"
+                            type="image/webp">
+                        <source
+                            data-srcset="{{ 'Group34.png' | asset_img_url: 'master' }}"
+                            type="image/png">
+                        <img class="lazyload" data-src="{{ 'Group34.png' | asset_img_url: 'master' }}" alt="">
+                    </picture>
+                    <h5>Dark Spots</h5>
+                </a>
+                <a class="flex_item" href="/pages/exfoliating-body-scrub">
+                    <picture>
+                        <source
+                            data-srcset="{{ 'Group33.webp' | asset_url }}"
+                            type="image/webp">
+                        <source
+                            data-srcset="{{ 'Group33.png' | asset_img_url: 'master' }}"
+                            type="image/png">
+                        <img class="lazyload" data-src="{{ 'Group33.png' | asset_img_url: 'master' }}" alt="">
+                    </picture>
+                    <h5>Exfoliating</h5>
+                </a>
+                <a class="flex_item" href="/pages/scars-body-scrub">
+                    <picture>
+                        <source
+                            data-srcset="{{ 'Group36.webp' | asset_url }}"
+                            type="image/webp">
+                        <source
+                            data-srcset="{{ 'Group36.png' | asset_img_url: 'master' }}"
+                            type="image/png">
+                        <img class="lazyload" data-src="{{ 'Group36.png' | asset_img_url: 'master' }}" alt="">
+                    </picture>
+                    <h5>Scars</h5>
+                </a>
+                <a class="flex_item" href="/pages/dead-skin-scrub">
+                    <picture>
+                        <source
+                            data-srcset="{{ 'Group35.webp' | asset_url }}"
+                            type="image/webp">
+                        <source
+                            data-srcset="{{ 'Group35.png' | asset_img_url: 'master' }}"
+                            type="image/png">
+                        <img class="lazyload" data-src="{{ 'Group35.png' | asset_img_url: 'master' }}" alt="">
+                    </picture>
+                    <h5>Dead Skin</h5>
+                </a>
+                <a class="flex_item" href="/pages/scrub-for-acne">
+                    <picture>
+                        <source
+                            data-srcset="{{ 'Group32.webp' | asset_url }}"
+                            type="image/webp">
+                        <source
+                            data-srcset="{{ 'Group32.png' | asset_img_url: 'master' }}"
+                            type="image/png">
+                        <img class="lazyload" data-src="{{ 'Group32.png' | asset_img_url: 'master' }}" alt="">
+                    </picture>
+                    <h5>Acne</h5>
+                </a>
+            </div>
+            <a class="read" href="/pages/7-benefits-of-using-body-scrub">Read More</a>
+        </div>
+    </div>
+</div>
+<div id="sec5" class="sec51">
+    <div class="cont desk">
+        <div class="left" id="prod_imgs">
+            <div class="prod_img">
+                <picture>
+                    <source
+                        data-srcset="{{ 'Product-coffee.webp' | asset_url }}"
+                        type="image/webp">
+                    <source
+                        data-srcset="{{ 'Product-coffee.png' | asset_img_url: 'master' }}"
+                        type="image/png">
+                    <img class="lazyload" data-src="{{ 'Product-coffee.png' | asset_img_url: 'master' }}" alt="">
+                </picture>
+            </div>
+            <div class="prod_img active">
+                <picture>
+                    <source
+                        data-srcset="{{ 'Product-Chocolate.webp' | asset_url }}"
+                        type="image/webp">
+                    <source
+                        data-srcset="{{ 'Product-Chocolate.png' | asset_img_url: 'master' }}"
+                        type="image/png">
+                    <img class="lazyload" data-src="{{ 'Product-Chocolate.png' | asset_img_url: 'master' }}" alt="">
+                </picture>
+            </div>
+            <div class="prod_img">
+                <picture>
+                    <source
+                        data-srcset="{{ 'Product-rose.webp' | asset_url }}"
+                        type="image/webp">
+                    <source
+                        data-srcset="{{ 'Product-rose.png' | asset_img_url: 'master' }}"
+                        type="image/png">
+                    <img class="lazyload" data-src="{{ 'Product-rose.png' | asset_img_url: 'master' }}" alt="">
+                </picture>
+            </div>
+            <div class="prod_img">
+                <picture>
+                    <source
+                        data-srcset="{{ 'Product-soursop.webp' | asset_url }}"
+                        type="image/webp">
+                    <source
+                        data-srcset="{{ 'Product-soursop.png' | asset_img_url: 'master' }}"
+                        type="image/png">
+                    <img class="lazyload" data-src="{{ 'Product-soursop.png' | asset_img_url: 'master' }}" alt="">
+                </picture>
+            </div>
+        </div>
+        <div class="right">
+            <div id="prod_wrap">
+                <div class="prod_info">
+                    <h2>{{ prod_1.title}}</h2>
+                    <h6>Time for the best caffeine fix you’ve ever had.</h6>
+                    <p>
+                        Turns out when coffee grounds are applied to the skin, the same stuff
+                        that brings you to life in the A.M. helps energize your epidermis by
+                        reducing redness and smoothing out any lumps or bumps that are
+                        bringing you down. Smooth, supple skin by the time you step out of
+                        the shower—not bad, right?
+                    </p>
+
+                    {% include 'variant-dropdown', product: prod_1 %}
+                </div>
+                <div class="prod_info active">
+                    <h2>{{ prod_2.title}}</h2>
+                    <h6>Try our Organic Chocolate Body Scrub on for size.</h6>
+                    <p>
+                        It smells like the best bar of the sweet stuff you’ve ever had. It makes
+                        your skin look younger and smoother than ever. And it costs you
+                        exactly 0 calories.
+                    </p>
+
+                    {% include 'variant-dropdown', product: prod_2 %}
+                </div>
+                <div class="prod_info">
+                    <h2>{{ prod_3.title}}</h2>
+                    <h6>So, the rose: the symbol of love and beauty. Wonder why that is?</h6>
+                    <p>
+                        It’s been used throughout the ages to help everyone from the
+                        ancient Greeks to modern-day movie stars get the best skin
+                        possible. Those little petals aren’t so dainty: they’re packed with
+                        essential oils that keep inflammation at bay.
+                    </p>
+
+                    {% include 'variant-dropdown', product: prod_3 %}
+                </div>
+                <div class="prod_info">
+                    <h2>{{ prod_4.title}}</h2>
+                    <h6>Strange name, we know. But here us out: Soursop is the best thing your skin’s never heard
+                        of—until now.</h6>
+                    <p>
+                        The leaves of this tropical plant (native to South America, Africa,
+                        and Southeast Asia) are packed full of vitamins A, B, and C, which soothe
+                        the skin and can help provide sweet relief for some troublesome skin
+                        conditions.
+                    </p>
+
+                    {% include 'variant-dropdown', product: prod_4 %}
+                </div>
+            </div>
+        </div>
+        <div id="circles" class="circles">
+            <div class="wrap">
+                <div order='0' class="circle">
+                    <picture>
+                        <source
+                            data-srcset="{{ 'crcl_(1).webp' | asset_url }}"
+                            type="image/webp">
+                        <source
+                            data-srcset="{{ 'crcl_(1).png' | asset_img_url: 'master' }}"
+                            type="image/png">
+                        <img class="lazyload" data-src="{{ 'crcl_(1).png' | asset_img_url: 'master' }}" alt="">
+                    </picture>
+                </div>
+                <p>Coffee Scrub</p>
+            </div>
+            <div class="wrap">
+                <div order='1' class="circle active">
+                    <picture>
+                        <source
+                            data-srcset="{{ 'crcl_(2).webp' | asset_url }}"
+                            type="image/webp">
+                        <source
+                            data-srcset="{{ 'crcl_(2).png' | asset_img_url: 'master' }}"
+                            type="image/png">
+                        <img class="lazyload" data-src="{{ 'crcl_(2).png' | asset_img_url: 'master' }}" alt="">
+                    </picture>
+                </div>
+                <p>Chocolate Scrub</p>
+            </div>
+            <div class="wrap">
+                <div order='2' class="circle">
+                    <picture>
+                        <source
+                            data-srcset="{{ 'crcl_(3).webp' | asset_url }}"
+                            type="image/webp">
+                        <source
+                            data-srcset="{{ 'crcl_(3).png' | asset_img_url: 'master' }}"
+                            type="image/png">
+                        <img class="lazyload" data-src="{{ 'crcl_(3).png' | asset_img_url: 'master' }}" alt="">
+                    </picture>
+                </div>
+                <p>Rose Scrub</p>
+            </div>
+            <div class="wrap">
+                <div order='3' class="circle">
+                    <picture>
+                        <source
+                            data-srcset="{{ 'crcl_(4).webp' | asset_url }}"
+                            type="image/webp">
+                        <source
+                            data-srcset="{{ 'crcl_(4).png' | asset_img_url: 'master' }}"
+                            type="image/png">
+                        <img class="lazyload" data-src="{{ 'crcl_(4).png' | asset_img_url: 'master' }}" alt="">
+                    </picture>
+                </div>
+                <p>Soursop Scrub</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sec5 first">
+    <div class="cont desk">
+        <div class="left">
+            <div class="prod_img active">
+                <picture>
+                    <source
+                        data-srcset="{{ 'Product-coffee.webp' | asset_url }}"
+                        type="image/webp">
+                    <source
+                        data-srcset="{{ 'Product-coffee.png' | asset_img_url: 'master' }}"
+                        type="image/png">
+                    <img class="lazyload" data-src="{{ 'Product-coffee.png' | asset_img_url: 'master' }}" alt="">
+                </picture>
+            </div>
+        </div>
+        <div class="right">
+            <div id="prod_wrap">
+                <div class="prod_info active">
+                    <h2>{{ prod_1.title}}</h2>
+                    <h6>Time for the best caffeine fix you’ve ever had.</h6>
+                    <p>
+                        Turns out when coffee grounds are applied to the skin, the same stuff
+                        that brings you to life in the A.M. helps energize your epidermis by
+                        reducing redness and smoothing out any lumps or bumps that are
+                        bringing you down. Smooth, supple skin by the time you step out of
+                        the shower—not bad, right?
+                    </p>
+                    {% include 'variant-dropdown', product: prod_1 %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sec5 second">
+    <div class="cont desk">
+        <div class="left">
+            <div class="prod_img active">
+                <picture>
+                    <source
+                        data-srcset="{{ 'Product-Chocolate.webp' | asset_url }}"
+                        type="image/webp">
+                    <source
+                        data-srcset="{{ 'Product-Chocolate.png' | asset_img_url: 'master' }}"
+                        type="image/png">
+                    <img class="lazyload" data-src="{{ 'Product-Chocolate.png' | asset_img_url: 'master' }}" alt="">
+                </picture>
+            </div>
+        </div>
+        <div class="right">
+            <div id="prod_wrap">
+                <div class="prod_info active">
+                    <h2>{{ prod_2.title}}</h2>
+                    <h6>Try our Organic Chocolate Body Scrub on for size.</h6>
+                    <p>
+                        It smells like the best bar of the sweet stuff you’ve ever had. It makes
+                        your skin look younger and smoother than ever. And it costs you
+                        exactly 0 calories.
+                    </p>
+
+                    {% include 'variant-dropdown', product: prod_2 %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sec5 third">
+    <div class="cont desk">
+        <div class="left">
+            <div class="prod_img active">
+                <picture>
+                    <source
+                        data-srcset="{{ 'Product-rose.webp' | asset_url }}"
+                        type="image/webp">
+                    <source
+                        data-srcset="{{ 'Product-rose.png' | asset_img_url: 'master' }}"
+                        type="image/png">
+                    <img class="lazyload" data-src="{{ 'Product-rose.png' | asset_img_url: 'master' }}" alt="">
+                </picture>
+            </div>
+        </div>
+        <div class="right">
+            <div id="prod_wrap">
+                <div class="prod_info active">
+                    <h2>{{ prod_3.title}}</h2>
+                    <h6>So, the rose: the symbol of love and beauty. Wonder why that is?</h6>
+                    <p>
+                        It’s been used throughout the ages to help everyone from the
+                        ancient Greeks to modern-day movie stars get the best skin
+                        possible. Those little petals aren’t so dainty: they’re packed with
+                        essential oils that keep inflammation at bay.
+                    </p>
+
+                    {% include 'variant-dropdown', product: prod_3 %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sec5 fourth">
+    <div class="cont desk">
+        <div class="left">
+            <div class="prod_img active">
+                <picture>
+                    <source
+                        data-srcset="{{ 'Product-soursop.webp' | asset_url }}"
+                        type="image/webp">
+                    <source
+                        data-srcset="{{ 'Product-soursop.png' | asset_img_url: 'master' }}"
+                        type="image/png">
+                    <img class="lazyload" data-src="{{ 'Product-soursop.png' | asset_img_url: 'master' }}" alt="">
+                </picture>
+            </div>
+        </div>
+        <div class="right">
+            <div id="prod_wrap">
+                <div class="prod_info active">
+                    <h2>{{ prod_4.title}}</h2>
+                    <h6>Strange name, we know. But here us out: Soursop is the best thing your skin’s never heard
+                        of—until now.</h6>
+                    <p>
+                        The leaves of this tropical plant (native to South America, Africa,
+                        and Southeast Asia) are packed full of vitamins A, B, and C, which soothe
+                        the skin and can help provide sweet relief for some troublesome skin
+                        conditions.
+                    </p>
+                    {% include 'variant-dropdown', product: prod_4 %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sec6">
+    <div class="cont">
+        <div class="top">
+            <div class="controls">
+                <div class="control" onclick="prev()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" fill="#178C4D" />
+                    </svg>
+                </div>
+                <div class="control" onclick="next()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" fill="#178C4D" />
+                    </svg>
+                </div>
+            </div>
+            <h3>Blog Posts</h3>
+            <a href="/blogs/news" class="more">Read More</a>
+        </div>
+        <div class="wrap">
+            <div class="scroller">
+                <ul class="items">
+                    {% for article in blogs["news"].articles %}
+                        {% if forloop.index0 == 0 or forloop.index0 == 3 or forloop.index0 == 6 %}
+                            <li class="item">
+                                <div class="blog_posts">
+                                    {% endif %}
+                                    <div class="post">
+                                        <div class="img" {% if article.image %}style="background-image: url('{{ article.image | img_url: '370x' }}');"
+                                            {% endif %}></div>
+                                        <div class="content">
+                                            <div class="title"><a href="{{ article.url }}">{{ article.title | truncate: 56 }}</a></div>
+                                            <p class="excerpt">
+                                                {% if article.excerpt.size > 0 %}
+                                                {{ article.excerpt }}
+                                                {% else %}
+                                                {{ article.content | strip_html | truncate: 150 }}
+                                                {% endif %}
+                                            </p>
+                                            <a href="{{ article.url }}" class="read">Read Article</a>
+                                        </div>
+                                    </div>
+                                    {% if forloop.index0 == 2 or forloop.index0 == 6 %}
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <a href="/blogs/news" class="more">Read More</a>
+        </div>
+    </div>
+</div>
+<div class="sec7">
+    <div class="cont">
+        <h3>Recent Reviews</h3>
+        <div class="reviews">
+            <div class="review">
+                <div class="content">
+                    <p class="text">
+                        The texture, color and scent of this scrub is so lovely! I love using this one as a way to
+                        relax. The Vitamin C and almond oil is great for skin imperfections. The texture is far
+                        less gritty that other scrubs, making it a gentle shower solution that I reach for over and
+                        over again.
+                    </p>
+                </div>
+                <picture>
+                    <source
+                        data-srcset="{{ 'port1.webp' | asset_url }}"
+                        type="image/webp">
+                    <source
+                        data-srcset="{{ 'port1.png' | asset_img_url: 'master' }}"
+                        type="image/png">
+                    <img class="lazyload" data-src="{{ 'port1.png' | asset_img_url: 'master' }}" alt="">
+                </picture>
+                <p class="name">Loretta Larson</p>
+            </div>
+            <div class="review">
+                <div class="content">
+                    <p class="text">
+                        The texture, color and scent of this scrub is so lovely! I love using this one as a way to
+                        relax. The Vitamin C and almond oil is great for skin imperfections. The texture is far
+                        less gritty that other scrubs, making it a gentle shower solution that I reach for over and
+                        over again.
+                    </p>
+                </div>
+                <picture>
+                    <source
+                        data-srcset="{{ 'port2.webp' | asset_url }}"
+                        type="image/webp">
+                    <source
+                        data-srcset="{{ 'port2.png' | asset_img_url: 'master' }}"
+                        type="image/png">
+                    <img class="lazyload" data-src="{{ 'port2.png' | asset_img_url: 'master' }}" alt="">
+                </picture>
+                <p class="name">Marie Townsend</p>
+            </div>
+            <div class="review">
+                <div class="content">
+                    <p class="text">
+                        The texture, color and scent of this scrub is so lovely! I love using this one as a way to
+                        relax. The Vitamin C and almond oil is great for skin imperfections. The texture is far
+                        less gritty that other scrubs, making it a gentle shower solution that I reach for over and
+                        over again.
+                    </p>
+                </div>
+                <picture>
+                    <source
+                        data-srcset="{{ 'port3.webp' | asset_url }}"
+                        type="image/webp">
+                    <source
+                        data-srcset="{{ 'port3.png' | asset_img_url: 'master' }}"
+                        type="image/png">
+                    <img class="lazyload" data-src="{{ 'port3.png' | asset_img_url: 'master' }}" alt="">
+                </picture>
+                <p class="name">Mina Nunez</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sec8">
+    <div class="cont">
+        <h3>Benefits of Using <br> Simply Scrub</h3>
+        <div class="flex_grid">
+            <div class="flex_item">
+                <div class="circle">
+                    <div class="wrap">
+                        <picture>
+                            <source
+                                data-srcset="{{ 'icn1.webp' | asset_url }}"
+                                type="image/webp">
+                            <source
+                                data-srcset="{{ 'icn1.png' | asset_img_url: 'master' }}"
+                                type="image/png">
+                            <img class="lazyload" data-src="{{ 'icn1.png' | asset_img_url: 'master' }}" alt="">
+                        </picture>
+                    </div>
+                </div>
+                <h6>Gentle Exfoliation</h6>
+            </div>
+            <div class="flex_item">
+                <div class="circle">
+                    <div class="wrap">
+                        <picture>
+                            <source
+                                data-srcset="{{ 'icn2.webp' | asset_url }}"
+                                type="image/webp">
+                            <source
+                                data-srcset="{{ 'icn2.png' | asset_img_url: 'master' }}"
+                                type="image/png">
+                            <img class="lazyload" data-src="{{ 'icn2.png' | asset_img_url: 'master' }}" alt="">
+                        </picture>
+                    </div>
+                </div>
+                <h6>Improve Circulation</h6>
+            </div>
+            <div class="flex_item">
+                <div class="circle">
+                    <div class="wrap">
+                        <picture>
+                            <source
+                                data-srcset="{{ 'icn3.webp' | asset_url }}"
+                                type="image/webp">
+                            <source
+                                data-srcset="{{ 'icn3.png' | asset_img_url: 'master' }}"
+                                type="image/png">
+                            <img class="lazyload" data-src="{{ 'icn3.png' | asset_img_url: 'master' }}" alt="">
+                        </picture>
+                    </div>
+                </div>
+                <h6>Reduce Skin Aging</h6>
+            </div>
+            <div class="flex_item">
+                <div class="circle">
+                    <div class="wrap">
+                        <picture>
+                            <source
+                                data-srcset="{{ 'icn4.webp' | asset_url }}"
+                                type="image/webp">
+                            <source
+                                data-srcset="{{ 'icn4.png' | asset_img_url: 'master' }}"
+                                type="image/png">
+                            <img class="lazyload" data-src="{{ 'icn4.png' | asset_img_url: 'master' }}" alt="">
+                        </picture>
+                    </div>
+                </div>
+                <h6>Moisturize and Protect Skin</h6>
+            </div>
+            <div class="flex_item">
+                <div class="circle">
+                    <div class="wrap">
+                        <picture>
+                            <source
+                                data-srcset="{{ 'icn5.webp' | asset_url }}"
+                                type="image/webp">
+                            <source
+                                data-srcset="{{ 'icn5.png' | asset_img_url: 'master' }}"
+                                type="image/png">
+                            <img class="lazyload" data-src="{{ 'icn5.png' | asset_img_url: 'master' }}" alt="">
+                        </picture>
+                    </div>
+                </div>
+                <h6>Prevent Skin Breakouts</h6>
+            </div>
+        </div>
+        <picture>
+            <source
+                data-srcset="{{ 'mm.webp' | asset_url }}"
+                type="image/webp">
+            <source
+                data-srcset="{{ 'mm.png' | asset_img_url: 'master' }}"
+                type="image/png">
+            <img class="bg lazyload" data-src="{{ 'mm.png' | asset_img_url: 'master' }}" alt="">
+        </picture>
+    </div>
+</div>
+<div class="sec9">
+    {% assign product = all_products[section.settings.gift] %}
+    <div class="cont">
+        <div class="left">
+            <picture>
+                <source
+                    data-srcset="{{ 'texturebg.webp' | asset_url }}"
+                    type="image/webp">
+                <source
+                    data-srcset="{{ 'texturebg.png' | asset_img_url: 'master' }}"
+                    type="image/png">
+                <img class="bg lazyload" data-src="{{ 'texturebg.png' | asset_img_url: 'master' }}" alt="">
+            </picture>
+            <picture>
+                <source
+                    data-srcset="{{ 'Bitmap_17.webp' | asset_url }}"
+                    type="image/webp">
+                <source
+                    data-srcset="{{ 'Bitmap_17.png' | asset_img_url: 'master' }}"
+                    type="image/png">
+                <img class="lazyload" data-src="{{ 'Bitmap_17.png' | asset_img_url: 'master' }}" alt="">
+            </picture>
+        </div>
+        <div class="right">
+            <h3>SimpleScrub Makes a Perfect Gift</h3>
+            <span class="price">{{ product.first_available_variant.price | money }}</span>
+            <p class="text">
+                The lucky recipient of this gift, will get three intoxicating ways to exfoliate and
+                moisturize their skin with only the best natural, organic, and chemical-free ingredients mother
+                nature has to offer. You'll get a ton of thanks... we guarantee it. 
+            </p>
+            {% if product.available %}
+            {% form "product", product, id: 'form_gift' %}
+            <input type="hidden" id="rrr" name="id" value="{{ product.first_available_variant.id }}" checked />
+            <div id="quantity">
+                <span>Qty</span>
+                <div class="quantity">
+                    <div class="cntrl" onclick="var val = this.nextElementSibling.value - 1; if (val > 0) { this.nextElementSibling.value = val }">-</div>
+                    <input type="text" name="quantity" value="1" min="1" pattern="[0-9]*" data-quantity-item="{{ forloop.index }}">
+                    <div class="cntrl" onclick="var val = Number(this.previousElementSibling.value) + 1; this.previousElementSibling.value = val">+</div>
+                </div>
+                <button class="add_to_cart" type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.42893 0.139526C3.33286 0.139526 0 3.39488 0 7.39569C0 11.3965 3.33286 14.6519 7.42893 14.6519C11.525 14.6519 14.8579 11.3965 14.8579 7.39569C14.8579 3.39488 11.525 0.139526 7.42893 0.139526ZM7.42893 14.093C3.64821 14.093 0.572143 11.0885 0.572143 7.39569C0.572143 3.7029 3.64821 0.698364 7.42893 0.698364C11.2096 0.698364 14.2857 3.7029 14.2857 7.39569C14.2857 11.0885 11.2096 14.093 7.42893 14.093Z" fill="white"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9291 4.41979L6.5373 9.24491L3.89194 7.1777C3.76944 7.08072 3.58944 7.10131 3.49016 7.22131C3.39266 7.34131 3.4123 7.51677 3.5348 7.61375L6.39194 9.84561C6.44516 9.88642 6.50801 9.907 6.57051 9.907C6.65016 9.907 6.72837 9.87561 6.78551 9.81282L11.3559 4.79026C11.4619 4.67445 11.4505 4.49863 11.3319 4.39642C11.2148 4.29282 11.0337 4.30398 10.9291 4.41979Z" fill="white"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.42893 0.139526C3.33286 0.139526 0 3.39488 0 7.39569C0 11.3965 3.33286 14.6519 7.42893 14.6519C11.525 14.6519 14.8579 11.3965 14.8579 7.39569C14.8579 3.39488 11.525 0.139526 7.42893 0.139526ZM7.42893 14.093C3.64821 14.093 0.572143 11.0885 0.572143 7.39569C0.572143 3.7029 3.64821 0.698364 7.42893 0.698364C11.2096 0.698364 14.2857 3.7029 14.2857 7.39569C14.2857 11.0885 11.2096 14.093 7.42893 14.093Z" fill="white"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9291 4.41979L6.5373 9.24491L3.89194 7.1777C3.76944 7.08072 3.58944 7.10131 3.49016 7.22131C3.39266 7.34131 3.4123 7.51677 3.5348 7.61375L6.39194 9.84561C6.44516 9.88642 6.50801 9.907 6.57051 9.907C6.65016 9.907 6.72837 9.87561 6.78551 9.81282L11.3559 4.79026C11.4619 4.67445 11.4505 4.49863 11.3319 4.39642C11.2148 4.29282 11.0337 4.30398 10.9291 4.41979Z" fill="white"/>
+                    </svg>
+                    <p>Add to Cart</p>
+                    <p class="added">Added</p>
+                </button>
+            </div>
+
+
+            <script>
+                var prod_picker = document.getElementsByClassName('prod_picker');
+                for (var u = 0; u < prod_picker.length; u++) {
+                    prod_picker[u].addEventListener('click', function () {
+
+                        for (var uu = 0; uu < prod_picker.length; uu++) {
+                            if (prod_picker[uu].classList) {
+                                prod_picker[uu].classList.remove('picked');
+                            }
+                        }
+                        this.classList.add('picked');
+                    })
+
+                }
+            </script>
+            {% endform %}
+
+            {% else %}
+            <a href="#" class="button small disabled">Sold Out</a>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+<div class="yotpo">
+    <div class="cont">
+        <h3>Yotpo reviews</h3>
+        <div id="y-embedded-widget" class="yotpo embedded-widget" data-appkey="axqeDm0H90oHPEJk3VP1UM8p4cucD4NUxckzJBxL"
+            data-product-id="yotpo_global_reviews" data-layout="reviews" data-width="100" data-reviews="9"
+            data-header-text="Recent Reviews" data-header-background-color="919191" data-body-background-color="FFFFFF"
+            data-font-size="18" data-font-color="FFFFFF">&nbsp;</div>
+    </div>
+</div>
+<div class="sec10">
+    <div class="cont">
+        <div class="column">
+            <h6>About Us</h6>
+            <p>
+                We spent two years doing some
+                matchmaking, finding out which all natural,
+                all organic body scrub ingredients make skin
+                the happiest when their powers combined.
+            </p>
+            <a class="more" href="/pages/about-us">Learn More</a>
+        </div>
+        <div class="column">
+            <h6>Return Policy</h6>
+            <p>
+                You satisfaction is very important to us. If for
+                any reason you are unhappy with your
+                purchase, we accept returns and exchanges
+                within 30 calendar days.
+            </p>
+            <a class="more" href="">Learn More</a>
+        </div>
+        <div class="column">
+            <h6>Shipping</h6>
+            <p>
+                At SimplyScrub, we offer Free Shipping to
+                Continental US. All orders placed by 4:00 p.m.
+                EST will normally be processed and shipped
+                the same day.
+            </p>
+            <a class="more" href="">Learn More</a>
+        </div>
+    </div>
+</div>
+
+{% include 'ajax_btn' %}
+
+{% schema %}
+    {
+        "name": "Products",
+        "settings": [
+            {
+                "type": "product",
+                "id": "gift",
+                "label": "Gift"
+            },
+            {
+                "type": "product",
+                "id": "product_1",
+                "label": "Product 1"
+            },
+            {
+                "type": "product",
+                "id": "product_2",
+                "label": "Product 2"
+            },
+            {
+                "type": "product",
+                "id": "product_3",
+                "label": "Product 3"
+            },
+            {
+                "type": "product",
+                "id": "product_4",
+                "label": "Product 4"
+            }
+        ]
+    }
+{% endschema %}

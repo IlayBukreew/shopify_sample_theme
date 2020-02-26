@@ -1,0 +1,27 @@
+{% form "product", product, id: product.id %}
+    <div id="custom_select" class="custom_select" style="width:200px;">
+        <input type="hidden" id="rrr" name="id" value="{{ product.first_available_variant.id }}" checked />
+        <select name="id">
+				<option {% if product.collections[0].products[0].id == product.id %} selected="selected" {% endif %} value="{{ product.collections[0].products[0].first_available_variant.id }}">
+						{{ product.collections[0].products[0].first_available_variant.title }}
+						<span>-</span>
+						{{ product.collections[0].products[0].first_available_variant.price | money }}
+				</option>
+				<option {% if product.collections[0].products[1].id == product.id %} selected="selected" {% endif %} value="{{ product.collections[0].products[1].first_available_variant.id }}">
+						{{ product.collections[0].products[1].first_available_variant.title }}
+						<span>-</span>
+						{{ product.collections[0].products[1].first_available_variant.price | money }}
+				</option>
+        </select>
+    </div>
+    <button class="btn add_to_cart" type="submit">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+          <path fill="black" fill-rule="evenodd" clip-rule="evenodd" d="M7.42893 0.139526C3.33286 0.139526 0 3.39488 0 7.39569C0 11.3965 3.33286 14.6519 7.42893 14.6519C11.525 14.6519 14.8579 11.3965 14.8579 7.39569C14.8579 3.39488 11.525 0.139526 7.42893 0.139526ZM7.42893 14.093C3.64821 14.093 0.572143 11.0885 0.572143 7.39569C0.572143 3.7029 3.64821 0.698364 7.42893 0.698364C11.2096 0.698364 14.2857 3.7029 14.2857 7.39569C14.2857 11.0885 11.2096 14.093 7.42893 14.093Z" fill="white"/>
+          <path fill="black" fill-rule="evenodd" clip-rule="evenodd" d="M10.9291 4.41979L6.5373 9.24491L3.89194 7.1777C3.76944 7.08072 3.58944 7.10131 3.49016 7.22131C3.39266 7.34131 3.4123 7.51677 3.5348 7.61375L6.39194 9.84561C6.44516 9.88642 6.50801 9.907 6.57051 9.907C6.65016 9.907 6.72837 9.87561 6.78551 9.81282L11.3559 4.79026C11.4619 4.67445 11.4505 4.49863 11.3319 4.39642C11.2148 4.29282 11.0337 4.30398 10.9291 4.41979Z" fill="white"/>
+          <path fill="black" fill-rule="evenodd" clip-rule="evenodd" d="M7.42893 0.139526C3.33286 0.139526 0 3.39488 0 7.39569C0 11.3965 3.33286 14.6519 7.42893 14.6519C11.525 14.6519 14.8579 11.3965 14.8579 7.39569C14.8579 3.39488 11.525 0.139526 7.42893 0.139526ZM7.42893 14.093C3.64821 14.093 0.572143 11.0885 0.572143 7.39569C0.572143 3.7029 3.64821 0.698364 7.42893 0.698364C11.2096 0.698364 14.2857 3.7029 14.2857 7.39569C14.2857 11.0885 11.2096 14.093 7.42893 14.093Z" fill="white"/>
+          <path fill="black" fill-rule="evenodd" clip-rule="evenodd" d="M10.9291 4.41979L6.5373 9.24491L3.89194 7.1777C3.76944 7.08072 3.58944 7.10131 3.49016 7.22131C3.39266 7.34131 3.4123 7.51677 3.5348 7.61375L6.39194 9.84561C6.44516 9.88642 6.50801 9.907 6.57051 9.907C6.65016 9.907 6.72837 9.87561 6.78551 9.81282L11.3559 4.79026C11.4619 4.67445 11.4505 4.49863 11.3319 4.39642C11.2148 4.29282 11.0337 4.30398 10.9291 4.41979Z" fill="white"/>
+      </svg>
+      <p>Add to Cart</p>
+      <p class="added">Added</p>
+	</button>
+{% endform %}

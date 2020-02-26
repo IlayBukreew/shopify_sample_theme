@@ -1,0 +1,47 @@
+<div id="page_templ" class="page-width">
+    <div class="grid">
+        <h2>Solutions</h2>
+        <div class="wrapper">
+            {% include 'numbers' %}
+            {% if section.settings.darkspots_product_1 != blank and section.settings.darkspots_product_2 != blank %}
+                <div class="products">
+                    {% include 'product-eczema', product: all_products[section.settings.darkspots_product_1], disc: section.settings.darkspots_product_1_text %}
+                    {% include 'product-eczema', product: all_products[section.settings.darkspots_product_2], disc: section.settings.darkspots_product_2_text %}
+                </div>
+            {% endif %}
+        </div>
+        {{ page.content }}
+    </div>
+</div>
+
+{% include 'c_s_js' %}
+
+{% schema %}
+    {
+        "name": "Content",
+        "settings": [
+            {
+                "type": "product",
+                "id": "darkspots_product_1",
+                "label": "Product Left"
+            },
+            {
+                "type": "textarea",
+                "id": "darkspots_product_1_text",
+                "default": "The sweet almond oil contained in our Chocolate Scrub can help reduce the appearance of dark spots, as the compounds it contains can reduce pigmentation and even out skin tone. The honeycomb in this scrub also has anti-inflammatory and moisturizing properties, which can protect against sun damage and keep your skin looking plump and firm.",
+                "label": "Product Left Text"
+            },
+            {
+                "type": "product",
+                "id": "darkspots_product_2",
+                "label": "Product Right"
+            },
+            {
+                "type": "textarea",
+                "id": "darkspots_product_2_text",
+                "default": "Check out the Soursop Scrub for additional black spot-fighting action. The antioxidants from the green tea in this scrub can help lighten discolored skin, while the polyphenols help protect your skin cells from damage that can cause cancer. In addition, we’ve included mint in this scrub because this refreshing herb contains natural salicylic acid and Vitamin B, which helps brighten and remove dead skin — a one-two punch to help your best self shine through.",
+                "label": "Product Right Text"
+            }
+        ]
+    }
+{% endschema %}

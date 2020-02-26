@@ -1,0 +1,74 @@
+<script>
+    var serialize = function (form) {
+        var serialized = [];
+        for (var i = 0; i < form.elements.length; i++) {
+            var field = form.elements[i];
+            if (!field.name || field.disabled || field.type === 'file' || field.type === 'reset' || field.type === 'submit' || field.type === 'button') continue;
+            if (field.type === 'select-multiple') {
+                for (var n = 0; n < field.options.length; n++) {
+                    if (!field.options[n].selected) continue;
+                    serialized.push(encodeURIComponent(field.name) + "=" + encodeURIComponent(field.options[n].value));
+                }
+            }
+            else if ((field.type !== 'checkbox' && field.type !== 'radio') || field.checked) {
+                serialized.push(encodeURIComponent(field.name) + "=" + encodeURIComponent(field.value));
+            }
+        }
+        return serialized.join('&');
+    };
+    var xhr = new XMLHttpRequest();
+    var add_btns1 = document.getElementsByClassName('add-to-cart');
+    var add_btns2 = document.getElementsByClassName('add_to_cart');
+    var add_btns;
+    if (add_btns1.length !== 0) {
+        add_btns = add_btns1;
+    } else {
+        add_btns = add_btns2;
+    }
+    var form_id;
+    for (var i = 0; i < add_btns.length; i++) {
+        var add_btn = add_btns[i];
+        add_btn.addEventListener('click', function(e) {
+            if (this.parentElement.className == 'shopify-product-form') {
+                form_id = this.parentElement;
+            } else {
+                form_id = this.parentElement.parentElement;
+            }
+            addItem(form_id, this);
+            e.preventDefault();
+        })
+    }
+    function addItem(form_id, ttt) {
+        xhr.open('POST', '/cart/add.js');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                document.getElementById('ajax_msg').children[0].innerHTML = JSON.parse(xhr.responseText).title + ' <span>was added to the cart!</span><a href="/cart">View Cart</a>';
+                ttt.classList.add('added');
+                xhr.open('GET', '/cart.js');
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+							  if (document.getElementById('cart_count').classList.contains('hide')) {
+							  document.getElementById('cart_count').classList.remove('hide');
+							  }
+                        document.getElementById('cart_count').innerHTML = JSON.parse(xhr.responseText).item_count;
+                        document.getElementById('ajax_msg').classList.add('added');
+                    }
+                    else {
+                        console.log('Request failed.  Returned status of ' + xhr.status);
+                    }
+                };
+                xhr.send();
+                
+                setTimeout( function() { 
+                    ttt.classList.remove('added');
+                    document.getElementById('ajax_msg').classList.remove('added');
+                }, 3500);
+            }
+            else if (xhr.status !== 200) {
+                console.log('Request failed.  Returned status of ' + xhr.status);
+            }
+        };
+        xhr.send(serialize(form_id));
+    }
+</script>

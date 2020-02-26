@@ -1,0 +1,47 @@
+<div id="page_templ" class="page-width">
+    <div class="grid">
+        <h2>Solutions</h2>
+        <div class="wrapper">
+            {% include 'numbers' %}
+            {% if section.settings.scars_product_1 != blank and section.settings.scars_product_2 != blank %}
+                <div class="products">
+                    {% include 'product-eczema', product: all_products[section.settings.scars_product_1], disc: section.settings.scars_product_1_text %}
+                    {% include 'product-eczema', product: all_products[section.settings.scars_product_2], disc: section.settings.scars_product_2_text %}
+                </div>
+            {% endif %}
+        </div>
+        {{ page.content }}
+    </div>
+</div>
+
+{% include 'c_s_js' %}
+
+{% schema %}
+    {
+        "name": "Content",
+        "settings": [
+            {
+                "type": "product",
+                "id": "scars_product_1",
+                "label": "Product Left"
+            },
+            {
+                "type": "textarea",
+                "id": "scars_product_1_text",
+                "default": "Our Chocolate Scrub may help with the removal of small scars because it contains sweet almond oil and cocoa butter. Sweet almond oil can help soften the skin, and it absorbs readily and makes the skin smooth and even. Cocoa Butter has similar properties. This smooth substance penetrates deeply into the skin and imparts softness and moisture to all layers of the dermis. As your skin grows and regenerates, healthier skin will come to the surface and help replace stiff, damaged scar tissue.",
+                "label": "Product Left Text"
+            },
+            {
+                "type": "product",
+                "id": "scars_product_2",
+                "label": "Product Right"
+            },
+            {
+                "type": "textarea",
+                "id": "scars_product_2_text",
+                "default": "The Rose Scrub can also be effective in healing small scars. This product also contains sweet almond oil, along with Vitamin E and rose bud petals. These last two ingredients have natural antibacterial properties, which can help promote the growth of healthier skin and make scars less visible by evening out skin tone.",
+                "label": "Product Right Text"
+            }
+        ]
+    }
+{% endschema %}

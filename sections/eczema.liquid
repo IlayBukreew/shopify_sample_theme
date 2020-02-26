@@ -1,0 +1,47 @@
+<div id="page_templ" class="page-width">
+    <div class="grid">
+        <h2>Solutions</h2>
+            <div class="wrapper">
+                {% include 'numbers' %}
+                {% if section.settings.eczema_product_1 != blank and section.settings.eczema_product_2 != blank %}
+                    <div class="products">
+                        {% include 'product-eczema', product: all_products[section.settings.eczema_product_1], disc: section.settings.eczema_product_1_text %}
+                        {% include 'product-eczema', product: all_products[section.settings.eczema_product_2], disc: section.settings.eczema_product_2_text %}
+                    </div>
+                {% endif %}
+            </div>
+        {{ page.content }}
+    </div>
+</div>
+
+{% include 'c_s_js' %}
+
+{% schema %}
+    {
+        "name": "Content",
+        "settings": [
+            {
+                "type": "product",
+                "id": "eczema_product_1",
+                "label": "Product Left"
+            },
+            {
+                "type": "textarea",
+                "id": "eczema_product_1_text",
+                "default": "If you suffer from eczema or similar skin conditions, consider trying our Soursop Scrub. This product contains ground soursop leaves, which are chock full of Vitamins A and B to help soothe and heal sores. This scrub also contains cooling, refreshing mint to help calm itchiness and minimize redness and swelling.",
+                "label": "Product Left Text"
+            },
+            {
+                "type": "product",
+                "id": "eczema_product_2",
+                "label": "Product Right"
+            },
+            {
+                "type": "textarea",
+                "id": "eczema_product_2_text",
+                "default": "These pretty petals have natural antibacterial properties to help keep your skin clean, and the essential oils can reduce inflammation. The rose scrub also contains Vitamin E, which promotes new skin cell growth and has also been shown to reduce eczema symptoms thanks to its antioxidants, which can help relieve itchiness and inflammation as well.",
+                "label": "Product Right Text"
+            }
+        ]
+    }
+{% endschema %}

@@ -1,0 +1,125 @@
+{% unless template == "cart" %}
+    <div class="subscribe" {% unless template == "index" %}style="padding-top: 100px;"{% endunless %}>
+        {% if template == "index" %}
+            <img class="tableImg" src="{{'Object_1.png' | asset_img_url: 'master'}}">
+        {% endif %}
+        <h5>
+            Sign up to have the latest news and member-only <br> deals delivered straight to your inbox.
+        </h5>
+        <form action="">
+            <img class="lazyload" src="{{ 'icn_mail.png' | asset_img_url: 'master' }}" alt="">
+            <input class="mail" type="text" name="mail" placeholder="Your Email">
+            <input class="submit" type="submit" value="Subscribe">
+        </form>
+        <span>
+            Follow:
+            <ul>
+                <li><a href=""><img class="lazyload" src="{{ 'facebook.png' | asset_img_url: 'master' }}" alt=""></a></li>
+                <li><a href=""><img class="lazyload" src="{{ 'pinterest.png' | asset_img_url: 'master' }}" alt=""></a></li>
+                <li><a href=""><img class="lazyload" src="{{ 'twitter.png' | asset_img_url: 'master' }}" alt=""></a></li>
+                <li><a href=""><img class="lazyload" src="{{ 'insta.png' | asset_img_url: 'master' }}" alt=""></a></li>
+            </ul>
+        </span>
+    </div>
+{% endunless %}
+<footer>
+    <div class="cont">
+        <div class="nav">
+            <div class="imgs">
+                <div class="logo">
+                    <a href="/">
+                        <img class="lazyload" src="{{ 'logo2.png' | asset_img_url: 'master' }}" alt="">
+                    </a>
+                </div>
+                <div class="badge">
+                    <a href="/">
+                        <img class="lazyload" src="{{ 'badge.png' | asset_img_url: 'master' }}" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column products">
+                    <h5>Products</h5>
+                    <ul>
+                        {% for link in linklists[section.settings.footer1_linklist].links %}
+                            <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="column company">
+                    <h5>Company</h5>
+                    <ul>
+                        {% for link in linklists[section.settings.footer2_linklist].links %}
+                            <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="bottom">
+        <div class="cont">
+            <div class="copy">© 2017 SimplyScrub. All rights reserved. <a href="pages/terms-of-use">Terms of Use</a></div>
+            <div class="right">Shopify Store Design by <a>WebFly</a></div>
+        </div>
+    </div>
+    {% if template == "index" %} 
+        <script src="{{ 'main.js' | asset_url }}"></script>
+    {% endif %}
+</footer>
+
+{% schema %}
+{
+  "name": {
+    "de": "Footer",
+    "en": "Footer",
+    "es": "Footer",
+    "fr": "Footer",
+    "it": "Footer",
+    "ja": "Footer",
+    "pt-BR": "Footer"
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": {
+        "de": "Navigation",
+        "en": "Navigation",
+        "es": "Navegación",
+        "fr": "Navigation",
+        "it": "Navigazione",
+        "ja": "メニュー",
+        "pt-BR": "Navegação"
+      }
+    },
+    {
+      "type": "link_list",
+      "id": "footer1_linklist",
+      "label": {
+        "de": "Menü Products",
+        "en": "Menu Products",
+        "es": "Menú Products",
+        "fr": "Menu Products",
+        "it": "Menu Products",
+        "ja": "メニュー Products",
+        "pt-BR": "Menu Products"
+      },
+      "default": "footer"
+    },
+    {
+      "type": "link_list",
+      "id": "footer2_linklist",
+      "label": {
+        "de": "Menü Company",
+        "en": "Menu Company",
+        "es": "Menú Company",
+        "fr": "Menu Company",
+        "it": "Menu Company",
+        "ja": "メニュー Company",
+        "pt-BR": "Menu Company"
+      }
+    }
+  ]
+}
+{% endschema %}

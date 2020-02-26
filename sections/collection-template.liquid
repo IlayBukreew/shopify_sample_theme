@@ -1,0 +1,44 @@
+<div class="collection">
+    <div class="heading">
+        <h2>{{ collection.title | escape }}</h2>
+    </div>
+    <ul class="products">
+    
+        {% for product in collection.products  %}
+            {% if forloop.first %}
+                {% assign disco = 'Bitmap_25.png' | asset_img_url: 'master' %}
+            {% endif %}
+            {% if forloop.index == 2 %}
+                {% assign disco = 'Bitmap_27.png' | asset_img_url: 'master' %}
+            {% else %}
+                {% assign disco = 'Bitmap_28.png' | asset_img_url: 'master' %}
+            {% endif %}
+            <li class="product">{% include 'product-small', disc: disco %}</li>
+        {% endfor %}
+    </ul>
+    {% if is_empty_collection %}
+        <div class="no_items">
+            <p>{{ 'collections.general.no_matches' | t }}</p>
+        </div>
+    {% endif %}
+    {% if collection.description != blank %}
+        <div class="disc">
+            {{ collection.description }}
+        </div>
+    {% endif %}
+</div>
+
+<h5 class="yyr">Yotpo reviews</h5>
+      <div id="y-embedded-widget" class="yotpo embedded-widget"
+data-appkey="axqeDm0H90oHPEJk3VP1UM8p4cucD4NUxckzJBxL"
+data-product-id="yotpo_global_reviews"
+data-layout="reviews"
+data-width="100"
+data-reviews="10"
+data-header-text="Recent Reviews"
+data-header-background-color="919191"
+data-body-background-color="FFFFFF"
+data-font-size="18"
+data-font-color="FFFFFF">&nbsp;</div>
+
+{% include 'ajax_btn' %}

@@ -1,0 +1,47 @@
+<div id="page_templ" class="page-width">
+    <div class="grid">
+        <h2>Solutions</h2>
+        <div class="wrapper">
+            {% include 'numbers' %}
+            {% if section.settings.deadskin_product_1 != blank and section.settings.deadskin_product_2 != blank %}
+                <div class="products">
+                    {% include 'product-eczema', product: all_products[section.settings.deadskin_product_1], disc: section.settings.deadskin_product_1_text %}
+                    {% include 'product-eczema', product: all_products[section.settings.deadskin_product_2], disc: section.settings.deadskin_product_2_text %}
+                </div>
+            {% endif %}
+        </div>
+        {{ page.content }}
+    </div>
+</div>
+
+{% include 'c_s_js' %}
+
+{% schema %}
+    {
+        "name": "Content",
+        "settings": [
+            {
+                "type": "product",
+                "id": "deadskin_product_1",
+                "label": "Product Left"
+            },
+            {
+                "type": "textarea",
+                "id": "deadskin_product_1_text",
+                "default": "The Coffee Scrub is one of our favorite products to use when dullness and flakes are the issues. The firmness of the ground coffee beans provides a more intense exfoliation, which will really help dislodge any stuck skin. This scrub also contains shea butter and coconut oil, which will help keep the skin moisturized and nourished after you’ve polished yourself to a healthy glow. These healers also sink deep into the skin and provide protection long after you’ve scrubbed, so you can rest assured that your radiant complexion really sticks around.",
+                "label": "Product Left Text"
+            },
+            {
+                "type": "product",
+                "id": "deadskin_product_2",
+                "label": "Product Right"
+            },
+            {
+                "type": "textarea",
+                "id": "deadskin_product_2_text",
+                "default": "Another great option for getting rid of dead skin is the Rose Scrub. The exfoliant in this product is brown sugar, which not only helps remove dead skin, it also helps lock in moisture. Rose petals also have natural antibacterial and toning properties, which help heal any rough spots and bumps that may be popping up, too. Add a dash of healing oils for extra moisture and nourishment, and you’ll be sitting pretty for sure.",
+                "label": "Product Right Text"
+            }
+        ]
+    }
+{% endschema %}

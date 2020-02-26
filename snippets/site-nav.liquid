@@ -1,0 +1,19 @@
+<ul class="site_nav" id="site_nav">
+  {% for link in linklists[section.settings.main_linklist].links %}
+    {%- assign child_list_handle = link.title | handleize -%}
+
+    {% if link.links != blank %}
+      <li class="item {% if link.active %}active{% endif %}">
+        <a href="{{ link.url }}" class="link">
+          <span class="label">{{ link.title }}</span>
+        </a>
+      </li>
+      {% else %}
+        <li class="item {% if link.active %}active{% endif %}">
+        <a href="{{ link.url }}" class="link">
+          <span class="label">{{ link.title }}</span>
+        </a>
+      </li>
+      {% endif %}
+  {% endfor %}
+</ul>

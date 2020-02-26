@@ -1,0 +1,122 @@
+
+@font-face {
+    font-family: 'Cookie';
+    font-display: auto;
+    src: url('{{ 'Cookie-Regular.ttf' | asset_url }}');
+}
+.sec3 {
+    background-image: url('{{ 'background-soft-skin.png' | asset_img_url: 'master' }}');
+}
+#sec5 {
+    &::after {
+        content:url('{{ 'Background-coffee.png' | asset_img_url: 'master' }}') url('{{ 'Bkacground-Chocolate.png' | asset_img_url: 'master' }}') url('{{ 'Background-rose.png' | asset_img_url: 'master' }}') url('{{ 'Background-soursop.png' | asset_img_url: 'master' }}');
+    }
+    &.sec50 {
+        background-image: url('{{ 'Background-coffee.png' | asset_img_url: 'master' }}');
+    }
+    &.sec51 {
+        background-image: url('{{ 'Bkacground-Chocolate.png' | asset_img_url: 'master' }}');
+    }
+    &.sec52 {
+        background-image: url('{{ 'Background-rose.png' | asset_img_url: 'master' }}');
+    }
+    &.sec53 {
+        background-image: url('{{ 'Background-soursop.png' | asset_img_url: 'master' }}');
+    }
+}
+.sec5 {
+    &.first {
+        background-image: url('{{ 'm_coffee.png' | asset_img_url: 'master' }}');
+    }
+    &.second {
+        background-image: url('{{ 'm_choco.png' | asset_img_url: 'master' }}');
+    }
+    &.third {
+        background-image: url('{{ 'm_rose.png' | asset_img_url: 'master' }}');
+    }
+    &.fourth {
+        background-image: url('{{ 'm_soup.png' | asset_img_url: 'master' }}');
+    }
+}
+.yotpo {
+    background-image: url('{{ 'background-yotpo.png' | asset_img_url: 'master' }}');
+}
+.prodd .disc .ing_wrap:after {
+    background-image: url("{{ 'ing_bg.png' | asset_img_url: 'master' }}");
+}
+.webp {
+    .sec3 {
+        background-image: url('{{ 'background-soft-skin.webp' | asset_url }}');
+    }
+    #sec5 {
+        &::after {
+            content:url('{{ 'Background-coffee.webp' | asset_url }}') url('{{ 'Bkacground-Chocolate.webp' | asset_url }}') url('{{ 'Background-rose.webp' | asset_url }}') url('{{ 'Background-soursop.webp' | asset_url }}');
+        }
+        &.sec50 {
+            background-image: url('{{ 'Background-coffee.webp' | asset_url }}');
+        }
+        &.sec51 {
+            background-image: url('{{ 'Bkacground-Chocolate.webp' | asset_url }}');
+        }
+        &.sec52 {
+            background-image: url('{{ 'Background-rose.webp' | asset_url }}');
+        }
+        &.sec53 {
+            background-image: url('{{ 'Background-soursop.webp' | asset_url }}');
+        }
+    }
+    .sec5 {
+        &.first {
+            background-image: url('{{ 'm_coffee.webp' | asset_url }}');
+        }
+        &.second {
+            background-image: url('{{ 'm_choco.webp' | asset_url }}');
+        }
+        &.third {
+            background-image: url('{{ 'm_rose.webp' | asset_url }}');
+        }
+        &.fourth {
+            background-image: url('{{ 'm_soup.webp' | asset_url }}');
+        }
+    }
+    .yotpo {
+        background-image: url('{{ 'background-yotpo.webp' | asset_url }}');
+    }
+    .prodd .disc .ing_wrap:after {
+        background: url("{{ 'ing_bg.webp' | asset_url }}");
+		  background-repeat: no-repeat;
+            background-size: cover;
+    }
+}
+@media (min-width: 550px) {
+    header {
+        background-image: url('{{ 'header_small.png' | asset_img_url: 'master' }}');
+        &.home {
+            background-image: url('{{ 'Hero-background.png' | asset_img_url: 'master' }}');
+        }
+    }
+    .webp {
+        header {
+            background-image: url('{{ 'header_small.webp' | asset_url }}');
+            &.home {
+                background-image: url('{{ 'Hero-background.webp' | asset_url }}');
+            }
+        }
+    }
+}
+@media (max-width: 550px) {
+    header {
+        background-image: url('{{ 'header_small.png' | asset_img_url: 'master' }}');
+        &.home {
+            background-image: url('{{ 'bg_mob1.png' | asset_img_url: 'master' }}');
+        }
+    }
+    .webp {
+        header {
+            background-image: url('{{ 'header_small.webp' | asset_url }}');
+            &.home {
+                background-image: url('{{ 'bg_mob1.webp' | asset_url }}');
+            }
+        }
+    }
+}
